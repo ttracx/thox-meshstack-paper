@@ -15,7 +15,11 @@ institution:
 version: "1.0.1"
 date-released: "2026-11-03"
 url: "https://huggingface.co/datasets/Thox-ai/thox-whitepapers/resolve/main/meshstack/THOX_MeshStack_Research_Paper_v1.0.1.pdf"
+doi: "10.5281/zenodo.23919580"
 license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23919580"
 abstract: >-
   MeshStack is the distributed-inference layer for the THOX device
   family: a private household mesh of small computers that pool memory
@@ -49,7 +53,7 @@ keywords:
   - LoRa
 notes: >-
   Preprint, not peer reviewed. THOX.ai Research technical report
-  v1.0.1 (public edition), 3 November 2026. No DOI or arXiv identifier
-  has been issued for this paper yet; identifiers will be added to this
-  file when the Zenodo deposit completes. PDF SHA-256:
+  v1.0.1 (public edition), 3 November 2026. Zenodo DOI:
+  10.5281/zenodo.23919580. No arXiv identifier has been issued for
+  this paper. PDF SHA-256:
   d071cf7102994cd698201e384672012b442d5fda26302a77f8690d4ad025d0ff.

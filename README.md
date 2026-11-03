@@ -65,10 +65,10 @@ Reproduce the numbers: see [`docs/QUICKSTART.md`](docs/QUICKSTART.md) and
 
 Machine-readable citation metadata: [`CITATION.cff`](CITATION.cff).
 
-Status identifiers, stated plainly: this paper has **no DOI and no arXiv ID
-yet**. A Zenodo deposit is in preparation; when it lands, the DOI will be
-added here, to `CITATION.cff`, and to the THOX Whitepapers dataset card.
-The paper is also served from the
+Status identifiers, stated plainly: this paper's DOI is
+[10.5281/zenodo.23919580](https://doi.org/10.5281/zenodo.23919580)
+(Zenodo record: https://zenodo.org/records/23919580), recorded in
+`CITATION.cff`. It has **no arXiv ID**. The paper is also served from the
 [THOX Whitepapers dataset](https://huggingface.co/datasets/Thox-ai/thox-whitepapers)
 on Hugging Face (`meshstack/THOX_MeshStack_Research_Paper_v1.0.1.pdf`).
 

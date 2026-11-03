@@ -42,9 +42,9 @@ Formal release `v1.0.1` carries the three `paper/` files as assets.
 
 ## Blockers and open questions
 
-- Zenodo deposit: prepared; on completion, add the DOI to README,
-  CITATION.cff, the HF dataset card, and the Model Factory listing
-  in one pass.
+- Zenodo deposit: complete. DOI 10.5281/zenodo.23919580
+  (https://zenodo.org/records/23919580), added to README and
+  CITATION.cff from live readback on 2026-11-03.
 - arXiv: endorsement gate expected (ThoxOS draft precedent); TeX
   staging derives from `artifact/wp/build.py` output.
 
@@ -53,3 +53,7 @@ Formal release `v1.0.1` carries the three `paper/` files as assets.
 2026-11-03, by the GitHub publication lane (Sadie fleet): tree
 contents hashed at staging; HF dataset edition verified by
 anonymous download, byte-identical.
+
+2026-11-03, by the GitHub DOI patch lane: DOI added to README,
+CITATION.cff, and the v1.0.1 release notes from the live Zenodo
+record.
