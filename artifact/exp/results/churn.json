@@ -1,0 +1,1364 @@
+{
+  "evidence_label": "discrete-event simulation of protocol logic with stated distributions; not device behaviour",
+  "model": {
+    "nodes": 6,
+    "sim_seconds": 7200,
+    "mean_down_s": 60.0,
+    "arrival_mean_s": 20.0,
+    "service_mean_s": 30.0,
+    "heartbeat_s": 5.0,
+    "consumption_interval_s": 2.0
+  },
+  "configs": [
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 361.0,
+          "q1": 348.25,
+          "q3": 371.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 339.5,
+          "q1": 328.75,
+          "q3": 350.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 16.0,
+          "q1": 14.25,
+          "q3": 17.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 5.75,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 5.75,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 17.0,
+          "q1": 14.0,
+          "q3": 20.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.677306169550558,
+          "q1": 7.330582029241668,
+          "q3": 7.931748601561935,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 360.0,
+          "q1": 348.25,
+          "q3": 371.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 345.5,
+          "q1": 335.0,
+          "q3": 358.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 16.0,
+          "q1": 14.25,
+          "q3": 18.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 95.5,
+          "q1": 79.0,
+          "q3": 122.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 15.0,
+          "q1": 14.0,
+          "q3": 15.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 10.0,
+          "q1": 8.0,
+          "q3": 11.75,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.464158185375936,
+          "q1": 6.910036384081366,
+          "q3": 7.907573008772829,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 360.0,
+          "q1": 340.25,
+          "q3": 370.5,
+          "n": 30
+        },
+        "completed": {
+          "median": 358.5,
+          "q1": 337.75,
+          "q3": 369.5,
+          "n": 30
+        },
+        "replans": {
+          "median": 17.0,
+          "q1": 13.0,
+          "q3": 21.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 6.0,
+          "q1": 3.25,
+          "q3": 7.75,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 6.0,
+          "q1": 3.25,
+          "q3": 7.75,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 241.0,
+          "q1": 181.5,
+          "q3": 346.5,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 51.5,
+          "q1": 40.25,
+          "q3": 67.5,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.445908781719936,
+          "q1": 7.092671524324004,
+          "q3": 7.769615809654624,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 359.5,
+          "q1": 346.0,
+          "q3": 372.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 343.0,
+          "q1": 323.25,
+          "q3": 355.5,
+          "n": 30
+        },
+        "replans": {
+          "median": 15.0,
+          "q1": 13.0,
+          "q3": 17.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 5.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 5.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 17.5,
+          "q1": 14.0,
+          "q3": 20.75,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.76246518238372,
+          "q1": 17.048676079512234,
+          "q3": 18.122838572992805,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 355.5,
+          "q1": 347.5,
+          "q3": 372.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 346.0,
+          "q1": 334.75,
+          "q3": 359.5,
+          "n": 30
+        },
+        "replans": {
+          "median": 16.5,
+          "q1": 15.0,
+          "q3": 19.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 105.0,
+          "q1": 83.0,
+          "q3": 141.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 14.0,
+          "q1": 13.0,
+          "q3": 15.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 10.0,
+          "q1": 7.0,
+          "q3": 13.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.647103476467237,
+          "q1": 17.048676079512234,
+          "q3": 18.017031320984188,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 355.5,
+          "q1": 349.75,
+          "q3": 372.5,
+          "n": 30
+        },
+        "completed": {
+          "median": 353.5,
+          "q1": 348.25,
+          "q3": 371.5,
+          "n": 30
+        },
+        "replans": {
+          "median": 18.0,
+          "q1": 15.0,
+          "q3": 22.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 4.0,
+          "q1": 3.0,
+          "q3": 6.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 288.5,
+          "q1": 173.25,
+          "q3": 341.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 50.5,
+          "q1": 39.0,
+          "q3": 75.5,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.65689444405173,
+          "q1": 17.469990748627964,
+          "q3": 17.958856434797667,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 349.5,
+          "q1": 343.0,
+          "q3": 363.5,
+          "n": 30
+        },
+        "completed": {
+          "median": 329.5,
+          "q1": 325.0,
+          "q3": 342.25,
+          "n": 30
+        },
+        "replans": {
+          "median": 12.0,
+          "q1": 10.0,
+          "q3": 14.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 3.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 3.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 17.5,
+          "q1": 14.0,
+          "q3": 20.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.45368502866404,
+          "q1": 57.14875678112769,
+          "q3": 58.01474497913921,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 354.0,
+          "q1": 343.0,
+          "q3": 371.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 340.5,
+          "q1": 332.25,
+          "q3": 355.0,
+          "n": 30
+        },
+        "replans": {
+          "median": 12.5,
+          "q1": 10.0,
+          "q3": 16.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 2.5,
+          "q1": 2.0,
+          "q3": 3.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 2.5,
+          "q1": 2.0,
+          "q3": 3.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 116.5,
+          "q1": 78.75,
+          "q3": 145.5,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 14.0,
+          "q1": 13.0,
+          "q3": 15.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 11.0,
+          "q1": 8.0,
+          "q3": 13.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.56577504139352,
+          "q1": 57.24178538386434,
+          "q3": 58.0162409576385,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 356.5,
+          "q1": 341.25,
+          "q3": 374.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 354.5,
+          "q1": 338.25,
+          "q3": 373.0,
+          "n": 30
+        },
+        "replans": {
+          "median": 15.0,
+          "q1": 11.25,
+          "q3": 17.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 4.0,
+          "q1": 2.25,
+          "q3": 5.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 4.0,
+          "q1": 2.25,
+          "q3": 5.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 308.0,
+          "q1": 215.25,
+          "q3": 432.5,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 60.5,
+          "q1": 49.25,
+          "q3": 83.75,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.75,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.48026503489035,
+          "q1": 56.91067292724195,
+          "q3": 57.89981679049031,
+          "n": 30
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 353.5,
+          "q3": 374.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 362.0,
+          "q1": 348.0,
+          "q3": 371.5,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 4.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.325064829003281,
+          "q1": 6.74523350040721,
+          "q3": 7.897958616164061,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 353.5,
+          "q3": 374.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 363.5,
+          "q1": 350.0,
+          "q3": 371.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 17.0,
+          "q1": 7.5,
+          "q3": 24.75,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 10.5,
+          "q1": 5.0,
+          "q3": 12.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 2.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.325064829003281,
+          "q1": 6.74523350040721,
+          "q3": 7.897958616164061,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 10.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 353.5,
+          "q3": 374.75,
+          "n": 30
+        },
+        "completed": {
+          "median": 364.0,
+          "q1": 351.5,
+          "q3": 372.0,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.0,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.75,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 37.0,
+          "q1": 10.75,
+          "q3": 71.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 19.5,
+          "q1": 8.25,
+          "q3": 41.75,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 7.325064829003281,
+          "q1": 6.74523350040721,
+          "q3": 7.897958616164061,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.0,
+          "q1": 352.5,
+          "q3": 370.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 362.0,
+          "q1": 347.5,
+          "q3": 365.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 3.0,
+          "q1": 1.25,
+          "q3": 3.75,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.306212097337948,
+          "q1": 16.629788519536646,
+          "q3": 17.925340961345682,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.0,
+          "q1": 352.5,
+          "q3": 370.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 363.5,
+          "q1": 349.75,
+          "q3": 366.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 14.5,
+          "q1": 7.5,
+          "q3": 24.75,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 10.5,
+          "q1": 5.25,
+          "q3": 13.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 2.75,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.306212097337948,
+          "q1": 16.629788519536646,
+          "q3": 17.925340961345682,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 20.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.0,
+          "q1": 352.5,
+          "q3": 370.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 364.0,
+          "q1": 352.0,
+          "q3": 369.0,
+          "n": 30
+        },
+        "replans": {
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 44.0,
+          "q1": 21.0,
+          "q3": 75.25,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 26.5,
+          "q1": 14.75,
+          "q3": 41.25,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 17.306212097337948,
+          "q1": 16.629788519536646,
+          "q3": 17.925340961345682,
+          "n": 28
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 0.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 352.75,
+          "q3": 374.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 362.0,
+          "q1": 347.0,
+          "q3": 370.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 2.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 4.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.481989144785985,
+          "q1": 56.79591132086705,
+          "q3": 58.309599765823805,
+          "n": 27
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 30.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 352.75,
+          "q3": 374.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 362.0,
+          "q1": 349.25,
+          "q3": 371.0,
+          "n": 30
+        },
+        "replans": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 2.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 13.5,
+          "q1": 6.0,
+          "q3": 29.5,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 8.0,
+          "q1": 4.0,
+          "q3": 12.75,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 2.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.481989144785985,
+          "q1": 56.79591132086705,
+          "q3": 58.309599765823805,
+          "n": 27
+        }
+      }
+    },
+    {
+      "mean_up_s": 3600.0,
+      "lease_ttl_s": 60.0,
+      "decision_cache_s": 300.0,
+      "heartbeat_s": 5.0,
+      "seeds": 30,
+      "summary": {
+        "sessions": {
+          "median": 365.5,
+          "q1": 352.75,
+          "q3": 374.0,
+          "n": 30
+        },
+        "completed": {
+          "median": 363.0,
+          "q1": 351.0,
+          "q3": 372.75,
+          "n": 30
+        },
+        "replans": {
+          "median": 2.0,
+          "q1": 1.0,
+          "q3": 2.75,
+          "n": 30
+        },
+        "stale_completions_unfenced_accepted": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_completions_fenced_rejected": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "stale_auth_cached": {
+          "median": 28.0,
+          "q1": 9.0,
+          "q3": 80.25,
+          "n": 30
+        },
+        "stale_auth_live": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "lost_unreplannable": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "max_stale_auth_per_session": {
+          "median": 23.5,
+          "q1": 6.25,
+          "q3": 53.75,
+          "n": 30
+        },
+        "fail_closed_on_dead_path": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 30
+        },
+        "detect_latency_median": {
+          "median": 57.481989144785985,
+          "q1": 56.79591132086705,
+          "q3": 58.309599765823805,
+          "n": 27
+        }
+      }
+    }
+  ]
+}

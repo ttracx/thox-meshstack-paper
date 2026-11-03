@@ -1,0 +1,6136 @@
+{
+  "compression": {
+    "geometry": {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "num_hidden_layers": 24,
+      "num_attention_heads": 14,
+      "num_key_value_heads": 2,
+      "hidden_size": 896,
+      "head_dim": 64,
+      "kv_bytes_per_token_bf16": 12288,
+      "activation_bytes_per_token_bf16": 1792
+    },
+    "samples": [
+      {
+        "tokens": 128,
+        "prefill_seconds_host": 0.9366828290000058,
+        "kv_bytes_bf16": 1572864,
+        "activation_bytes_bf16": 229376,
+        "activation_layer_boundary": 12,
+        "prompt_sha256": "29dd34610f7fc45c802128da962334faf17b2fb4aa63f00bebbd2c8045f7c569",
+        "prompt_repeats_of_base": 1.0
+      },
+      {
+        "tokens": 512,
+        "prefill_seconds_host": 2.9340980370000125,
+        "kv_bytes_bf16": 6291456,
+        "activation_bytes_bf16": 917504,
+        "activation_layer_boundary": 12,
+        "prompt_sha256": "d4a624b756033ca63ef05541b695d1af24661e973096db37250297ce6529193f",
+        "prompt_repeats_of_base": 2.0
+      },
+      {
+        "tokens": 2048,
+        "prefill_seconds_host": 14.133010939999963,
+        "kv_bytes_bf16": 25165824,
+        "activation_bytes_bf16": 3670016,
+        "activation_layer_boundary": 12,
+        "prompt_sha256": "b4c3d8a9912eef7b4acb502d6dde047396aac441d74734dc2762610f1d46b6b9",
+        "prompt_repeats_of_base": 8.0
+      }
+    ],
+    "host": {
+      "cpu_count": 2,
+      "torch": "2.15.0+cpu",
+      "python": "3.13.18"
+    },
+    "table": [
+      {
+        "sample": "kv-128",
+        "codec": "raw-zstd3",
+        "raw_MB": 1.572864,
+        "ratio": 1.2713792869313865,
+        "enc_MBps": 583.3236598806691,
+        "enc_q1": 577.3226905399973,
+        "enc_q3": 588.1424822713911,
+        "dec_MBps": 887.2027007604399,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-128",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 1.572864,
+        "ratio": 1.406912985686352,
+        "enc_MBps": 190.70600666692619,
+        "enc_q1": 185.20814903944714,
+        "enc_q3": 193.89986123184258,
+        "dec_MBps": 703.2665150031635,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-128",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 1.572864,
+        "ratio": 1.4302807430100692,
+        "enc_MBps": 49.06533222381813,
+        "enc_q1": 36.70242224555886,
+        "enc_q3": 53.14945433714124,
+        "dec_MBps": 523.7410397704133,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-128",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 1.572864,
+        "ratio": 1.47782229271116,
+        "enc_MBps": 2.3055828822795847,
+        "enc_q1": 2.1917757541828604,
+        "enc_q3": 2.6121414653357857,
+        "dec_MBps": 82.28892439175216,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-128",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 1.572864,
+        "ratio": 4.658557173702496,
+        "enc_MBps": 235.2231249853255,
+        "enc_q1": 232.96371276380222,
+        "enc_q3": 237.3466455110287,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "kv-512",
+        "codec": "raw-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 1.2909909684377536,
+        "enc_MBps": 527.9962053496399,
+        "enc_q1": 506.93381778208396,
+        "enc_q3": 545.066727173601,
+        "dec_MBps": 840.1652405507331,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-512",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 1.42982144549448,
+        "enc_MBps": 140.44566243987617,
+        "enc_q1": 127.37677520479083,
+        "enc_q3": 146.84747382011722,
+        "dec_MBps": 569.1966684817153,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-512",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 6.291456,
+        "ratio": 1.4573136043139472,
+        "enc_MBps": 41.61011689988214,
+        "enc_q1": 35.43076759882551,
+        "enc_q3": 45.727723874972135,
+        "dec_MBps": 471.89695765479115,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-512",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 6.291456,
+        "ratio": 1.5284696004547906,
+        "enc_MBps": 1.424169791184856,
+        "enc_q1": 1.3309305290367477,
+        "enc_q3": 1.459021518090941,
+        "dec_MBps": 64.33726769322949,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-512",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 4.820237554368354,
+        "enc_MBps": 195.46646059919928,
+        "enc_q1": 185.80692170596777,
+        "enc_q3": 200.9508236053847,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "kv-2048",
+        "codec": "raw-zstd3",
+        "raw_MB": 25.165824,
+        "ratio": 1.3061566153252075,
+        "enc_MBps": 356.3778078960812,
+        "enc_q1": 302.2026047871741,
+        "enc_q3": 414.7876096966849,
+        "dec_MBps": 733.3818605530184,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-2048",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 25.165824,
+        "ratio": 1.5123615962515573,
+        "enc_MBps": 121.91104441154499,
+        "enc_q1": 105.8360270599048,
+        "enc_q3": 137.00918715737816,
+        "dec_MBps": 364.6943279041434,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-2048",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 25.165824,
+        "ratio": 1.54628167838173,
+        "enc_MBps": 33.22690412782308,
+        "enc_q1": 31.133391602190237,
+        "enc_q3": 35.396690452052894,
+        "dec_MBps": 390.95609053594995,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-2048",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 25.165824,
+        "ratio": 1.6919734306006353,
+        "enc_MBps": 0.9821573060137401,
+        "enc_q1": 0.9652341213990686,
+        "enc_q3": 0.9993389352125908,
+        "dec_MBps": 77.7300947393685,
+        "bit_exact": true
+      },
+      {
+        "sample": "kv-2048",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 25.165824,
+        "ratio": 5.805038742434262,
+        "enc_MBps": 163.85027744463977,
+        "enc_q1": 135.21649799173616,
+        "enc_q3": 219.923362079864,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "act-128",
+        "codec": "raw-zstd3",
+        "raw_MB": 0.229376,
+        "ratio": 1.2615206929740135,
+        "enc_MBps": 888.5462769162887,
+        "enc_q1": 843.1871692303824,
+        "enc_q3": 917.9354297028409,
+        "dec_MBps": 947.2651774124656,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-128",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 0.229376,
+        "ratio": 1.3936035773306115,
+        "enc_MBps": 226.02940857015284,
+        "enc_q1": 218.89774788344462,
+        "enc_q3": 229.09684549521117,
+        "dec_MBps": 815.8201735250884,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-128",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 0.229376,
+        "ratio": 1.3954178783048827,
+        "enc_MBps": 44.22346251943507,
+        "enc_q1": 44.02619448778483,
+        "enc_q3": 44.59298880718658,
+        "dec_MBps": 774.3891425363606,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-128",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 0.229376,
+        "ratio": 1.4142251159120056,
+        "enc_MBps": 3.90315822958533,
+        "enc_q1": 3.7000664746812317,
+        "enc_q3": 4.0708531406994615,
+        "dec_MBps": 116.41995049978713,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-128",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 0.229376,
+        "ratio": 4.598187795685991,
+        "enc_MBps": 234.49191000027577,
+        "enc_q1": 227.65826150776303,
+        "enc_q3": 238.16599227801657,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "act-512",
+        "codec": "raw-zstd3",
+        "raw_MB": 0.917504,
+        "ratio": 1.2638405432768798,
+        "enc_MBps": 721.1043734224338,
+        "enc_q1": 554.138323193936,
+        "enc_q3": 768.4909207515258,
+        "dec_MBps": 672.3749277882088,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-512",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 0.917504,
+        "ratio": 1.3900649047639249,
+        "enc_MBps": 196.08460816198297,
+        "enc_q1": 193.65552441888298,
+        "enc_q3": 198.81680140970488,
+        "dec_MBps": 722.301340447148,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-512",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 0.917504,
+        "ratio": 1.409872289945311,
+        "enc_MBps": 54.033836518128105,
+        "enc_q1": 52.851893754919,
+        "enc_q3": 54.618717178330684,
+        "dec_MBps": 775.5778980914328,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-512",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 0.917504,
+        "ratio": 1.4257494669973458,
+        "enc_MBps": 2.4219045532314865,
+        "enc_q1": 2.266863529625844,
+        "enc_q3": 2.6267536186177094,
+        "dec_MBps": 91.73976277444294,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-512",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 0.917504,
+        "ratio": 4.558731609883585,
+        "enc_MBps": 181.1402884455136,
+        "enc_q1": 158.28883869240485,
+        "enc_q3": 204.5528928009601,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "act-2048",
+        "codec": "raw-zstd3",
+        "raw_MB": 3.670016,
+        "ratio": 1.265590838679598,
+        "enc_MBps": 560.8136315920998,
+        "enc_q1": 540.5517344827358,
+        "enc_q3": 577.8901378277501,
+        "dec_MBps": 790.1214155245088,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-2048",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 3.670016,
+        "ratio": 1.4276162802005656,
+        "enc_MBps": 197.63953721400853,
+        "enc_q1": 190.25814132790944,
+        "enc_q3": 202.5937825363257,
+        "dec_MBps": 511.37932476318014,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-2048",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 3.670016,
+        "ratio": 1.4644664915965129,
+        "enc_MBps": 50.018805353396885,
+        "enc_q1": 44.97256919599531,
+        "enc_q3": 53.21501786946419,
+        "dec_MBps": 428.71224048716624,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-2048",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 3.670016,
+        "ratio": 1.616596159301422,
+        "enc_MBps": 1.515275140407464,
+        "enc_q1": 1.4123733666064713,
+        "enc_q3": 1.611038736797843,
+        "dec_MBps": 116.5734202481563,
+        "bit_exact": true
+      },
+      {
+        "sample": "act-2048",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 3.670016,
+        "ratio": 4.9887190194423265,
+        "enc_MBps": 229.76120902538594,
+        "enc_q1": 228.2936136056304,
+        "enc_q3": 233.01807617199051,
+        "dec_MBps": null,
+        "bit_exact": null
+      },
+      {
+        "sample": "control-gaussian",
+        "codec": "raw-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 1.2868073659524528,
+        "enc_MBps": 499.4844750630611,
+        "enc_q1": 493.0142375634236,
+        "enc_q3": 517.6158241891002,
+        "dec_MBps": 820.5777264976599,
+        "bit_exact": true
+      },
+      {
+        "sample": "control-gaussian",
+        "codec": "bytesplit-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 1.412470553212335,
+        "enc_MBps": 197.04707630529361,
+        "enc_q1": 195.29468444306926,
+        "enc_q3": 199.17132720023378,
+        "dec_MBps": 594.3930435996067,
+        "bit_exact": true
+      },
+      {
+        "sample": "control-gaussian",
+        "codec": "bytesplit-zstd9",
+        "raw_MB": 6.291456,
+        "ratio": 1.4364599206271287,
+        "enc_MBps": 46.72742021444068,
+        "enc_q1": 38.79133392085552,
+        "enc_q3": 50.49486294944498,
+        "dec_MBps": 594.0520915032646,
+        "bit_exact": true
+      },
+      {
+        "sample": "control-gaussian",
+        "codec": "bytesplit-lzma",
+        "raw_MB": 6.291456,
+        "ratio": 1.4654180808909916,
+        "enc_MBps": 1.1595888411257793,
+        "enc_q1": 1.1272297163299208,
+        "enc_q3": 1.195616677094435,
+        "dec_MBps": 66.0848893887203,
+        "bit_exact": true
+      },
+      {
+        "sample": "control-gaussian",
+        "codec": "hi-only-zstd3",
+        "raw_MB": 6.291456,
+        "ratio": 4.808500133368694,
+        "enc_MBps": 200.31746950983825,
+        "enc_q1": 164.8085355574007,
+        "enc_q3": 215.1541995523221,
+        "dec_MBps": null,
+        "bit_exact": null
+      }
+    ],
+    "kpi_ratio_bytesplit_zstd3_kv2048": 1.5123615962515573,
+    "kpi_ratio_raw_zstd3_kv2048": 1.3061566153252075,
+    "kpi_best_ratio_kv2048": {
+      "codec": "bytesplit-lzma",
+      "ratio": 1.6919734306006353
+    },
+    "kpi_enc_MBps_bytesplit_zstd3_kv2048": 121.91104441154499,
+    "kpi_dec_MBps_bytesplit_zstd3_kv2048": 364.6943279041434,
+    "kpi_hi_plane_ratio_kv2048": 5.805038742434262,
+    "kpi_control_gaussian_ratio": 1.412470553212335,
+    "kpi_act_ratio_bytesplit_zstd3_2048": 1.4276162802005656,
+    "all_bit_exact": true,
+    "roundtrip_checks": 28,
+    "timing_reps": 30,
+    "kv_bytes_per_token_bf16": 12288,
+    "kv_MiB_4096_tokens_bf16": 48.0
+  },
+  "keying": {
+    "properties": {
+      "P1_prefix_sharing": true,
+      "P2_divergence": true,
+      "P3_model_binding": true,
+      "P4_principal_binding": true,
+      "P5_determinism": true
+    },
+    "known_answer": {
+      "secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "fingerprint_hex": "abababababababababababababababababababababababababababababababab",
+      "chunks": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "keys_hex": [
+        "57583d1c59f44e361985646b98a63933e762bdb19f1734f866873953cb85ecb2",
+        "51be4cd6edb0062c897751ab9e65f3a53626788d8f4d0b5edb3e8c532caefa14"
+      ]
+    },
+    "per_chunk": [
+      {
+        "chunk_tokens": 64,
+        "us_median": 9.667999961493479,
+        "us_q1": 9.340250130662753,
+        "us_q3": 9.877749903353106,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 256,
+        "us_median": 23.57900007154967,
+        "us_q1": 21.69049997746697,
+        "us_q3": 33.96524999743633,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 1024,
+        "us_median": 40.444000092065835,
+        "us_q1": 37.46250001768203,
+        "us_q3": 55.94925005425466,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 4096,
+        "us_median": 136.53299993166002,
+        "us_q1": 132.64675004620585,
+        "us_q3": 156.97375005174763,
+        "reps": 30
+      }
+    ],
+    "chain": {
+      "chunks": 64,
+      "us_median": 373.1614999651356,
+      "us_q1": 352.26799991505686,
+      "us_q3": 397.4284999230804,
+      "reps": 30
+    },
+    "kpi_us_per_64_token_chunk": 9.667999961493479,
+    "kpi_chain_4096_ms": 0.3731614999651356,
+    "kpi_keys_per_second_64": 103434.00951415845
+  },
+  "admission": {
+    "assumptions": {
+      "class_floors_bytes": {
+        "Air": 2000000000,
+        "Mini": 4000000000,
+        "Clip": 6000000000
+      },
+      "usable_fractions": [
+        0.5,
+        0.65,
+        0.8
+      ],
+      "workspace_per_stage_bytes": 268435456,
+      "system_budget_fraction": 0.25,
+      "placement": "first-fit contiguous in node order, anchor first; not optimal"
+    },
+    "models": {
+      "qwen05b": {
+        "name": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+        "layers": 24,
+        "total_weight_bytes": 988065536,
+        "kv_bytes_per_token": 12288,
+        "source": "model.safetensors of Qwen/Qwen2.5-0.5B-Instruct, parameter counts per tensor"
+      },
+      "phi4mini": {
+        "name": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+        "layers": 32,
+        "total_weight_bytes": 2493840576.0,
+        "kv_bytes_per_token": 131072,
+        "source": "published GGUF size 2,493,840,576 B; Phi-4-mini public geometry; uniform split is an assumption"
+      },
+      "demo27b": {
+        "name": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+        "layers": 64,
+        "total_weight_bytes": 15676630630.4,
+        "kv_bytes_per_token": 65536.0,
+        "source": "14.6 GiB total weights, 64 layers, 16 attention layers x 4 KV heads x 256 head_dim, bf16 KV; SSM state not priced"
+      }
+    },
+    "matrix": [
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 23,
+        "layers_total": 24,
+        "stages": []
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 11,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 23,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            22,
+            1.6287022306770078,
+            184.0
+          ],
+          [
+            "Air-1",
+            23,
+            31,
+            0.6938677952438593,
+            72.0
+          ]
+        ]
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 24,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 56,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 21,
+        "layers_total": 24,
+        "stages": []
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 8,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 18,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 27,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 21,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 52,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 15,
+        "layers_total": 24,
+        "stages": []
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 4,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 9,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 13,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 20,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.5,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 48,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 24,
+        "layers_total": 24,
+        "stages": [
+          [
+            "Air-0",
+            0,
+            23,
+            0.9202077388763428,
+            24.0
+          ]
+        ]
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 14,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 31,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            30,
+            2.162893336638807,
+            248.0
+          ],
+          [
+            "Air-1",
+            31,
+            31,
+            0.1596766892820597,
+            8.0
+          ]
+        ]
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 30,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 64,
+        "layers_total": 64,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            9,
+            2.2812499999999996,
+            24.0
+          ],
+          [
+            "Clip-1",
+            10,
+            24,
+            3.421874999999999,
+            32.0
+          ],
+          [
+            "Air-2",
+            25,
+            29,
+            1.140625,
+            8.0
+          ],
+          [
+            "Hub16-3",
+            30,
+            63,
+            7.756250000000005,
+            64.0
+          ]
+        ]
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 24,
+        "layers_total": 24,
+        "stages": [
+          [
+            "Air-0",
+            0,
+            23,
+            0.9202077388763428,
+            96.0
+          ]
+        ]
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 11,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 23,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            22,
+            1.6287022306770078,
+            736.0
+          ],
+          [
+            "Air-1",
+            23,
+            31,
+            0.6938677952438593,
+            288.0
+          ]
+        ]
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 30,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 64,
+        "layers_total": 64,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            9,
+            2.2812499999999996,
+            96.0
+          ],
+          [
+            "Clip-1",
+            10,
+            24,
+            3.421874999999999,
+            128.0
+          ],
+          [
+            "Air-2",
+            25,
+            29,
+            1.140625,
+            32.0
+          ],
+          [
+            "Hub16-3",
+            30,
+            63,
+            7.756250000000005,
+            256.0
+          ]
+        ]
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 22,
+        "layers_total": 24,
+        "stages": []
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 5,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 12,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 18,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 25,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.65,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 62,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 24,
+        "layers_total": 24,
+        "stages": [
+          [
+            "Air-0",
+            0,
+            23,
+            0.9202077388763428,
+            24.0
+          ]
+        ]
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 18,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            31,
+            2.3225700259208666,
+            256.0
+          ]
+        ]
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            31,
+            2.3225700259208666,
+            256.0
+          ]
+        ]
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "Unplaceable",
+        "layers_placed": 37,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "result": "placed",
+        "layers_placed": 64,
+        "layers_total": 64,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            11,
+            2.7374999999999994,
+            24.0
+          ],
+          [
+            "Clip-1",
+            12,
+            30,
+            4.334375,
+            40.0
+          ],
+          [
+            "Air-2",
+            31,
+            36,
+            1.36875,
+            16.0
+          ],
+          [
+            "Hub16-3",
+            37,
+            63,
+            6.1593750000000025,
+            48.0
+          ]
+        ]
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 24,
+        "layers_total": 24,
+        "stages": [
+          [
+            "Air-0",
+            0,
+            23,
+            0.9202077388763428,
+            96.0
+          ]
+        ]
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 14,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 29,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 32,
+        "layers_total": 32,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            28,
+            2.029345560148357,
+            928.0
+          ],
+          [
+            "Air-1",
+            29,
+            31,
+            0.2932244657725096,
+            96.0
+          ]
+        ]
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "Unplaceable",
+        "layers_placed": 36,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "result": "placed",
+        "layers_placed": 64,
+        "layers_total": 64,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            11,
+            2.7374999999999994,
+            96.0
+          ],
+          [
+            "Clip-1",
+            12,
+            29,
+            4.106249999999999,
+            160.0
+          ],
+          [
+            "Air-2",
+            30,
+            35,
+            1.36875,
+            32.0
+          ],
+          [
+            "Hub16-3",
+            36,
+            63,
+            6.387500000000003,
+            224.0
+          ]
+        ]
+      },
+      {
+        "label": "A: 0.5B on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "placed",
+        "layers_placed": 24,
+        "layers_total": 24,
+        "stages": [
+          [
+            "Air-0",
+            0,
+            23,
+            0.9202077388763428,
+            384.0
+          ]
+        ]
+      },
+      {
+        "label": "B1: Phi4Mini on one Air",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 7,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B2: Phi4Mini on one Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 15,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "B3: Phi4Mini on Air+Mini",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 22,
+        "layers_total": 32,
+        "stages": []
+      },
+      {
+        "label": "C1: 27B demo on Mini+Clip+Air trio",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "Unplaceable",
+        "layers_placed": 33,
+        "layers_total": 64,
+        "stages": []
+      },
+      {
+        "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+        "usable_fraction": 0.8,
+        "context_tokens": 32768,
+        "result": "placed",
+        "layers_placed": 64,
+        "layers_total": 64,
+        "stages": [
+          [
+            "Mini-0",
+            0,
+            10,
+            2.5093749999999995,
+            384.0
+          ],
+          [
+            "Clip-1",
+            11,
+            27,
+            3.878124999999999,
+            512.0
+          ],
+          [
+            "Air-2",
+            28,
+            32,
+            1.140625,
+            256.0
+          ],
+          [
+            "Hub16-3",
+            33,
+            63,
+            7.071875000000004,
+            896.0
+          ]
+        ]
+      }
+    ],
+    "kpi_trio_27b_at_floors": {
+      "0.5": "Unplaceable",
+      "0.65": "Unplaceable",
+      "0.8": "Unplaceable"
+    },
+    "kpi_trio_plus_hub_27b": {
+      "0.5": "Unplaceable",
+      "0.65": "placed",
+      "0.8": "placed"
+    },
+    "kpi_trio_total_floor_GB": 12.0,
+    "kpi_27b_weights_GiB": 14.6,
+    "clip_nodes_needed_for_27b": [
+      {
+        "usable_fraction": 0.5,
+        "context_tokens": 2048,
+        "clip_nodes_needed": 6
+      },
+      {
+        "usable_fraction": 0.5,
+        "context_tokens": 8192,
+        "clip_nodes_needed": 6
+      },
+      {
+        "usable_fraction": 0.65,
+        "context_tokens": 2048,
+        "clip_nodes_needed": 5
+      },
+      {
+        "usable_fraction": 0.65,
+        "context_tokens": 8192,
+        "clip_nodes_needed": 5
+      },
+      {
+        "usable_fraction": 0.8,
+        "context_tokens": 2048,
+        "clip_nodes_needed": 4
+      },
+      {
+        "usable_fraction": 0.8,
+        "context_tokens": 8192,
+        "clip_nodes_needed": 4
+      }
+    ],
+    "phi4mini_on_air_2048": "Unplaceable",
+    "phi4mini_on_mini_2048": "placed",
+    "phi4mini_on_mini_32768": "Unplaceable",
+    "phi4mini_on_air_mini_32768": "Unplaceable",
+    "qwen05b_on_air_32768_065": "Unplaceable"
+  },
+  "place": {
+    "inputs": {
+      "measured_ratio_bytesplit_zstd3_kv2048": 1.5123615962515573,
+      "link_rates_mbps": [
+        25,
+        50,
+        100,
+        200,
+        400,
+        800
+      ],
+      "prefill_tok_s": [
+        20,
+        50,
+        100,
+        200,
+        500,
+        1000,
+        2000
+      ],
+      "overhead_s": 0.02
+    },
+    "grid": [
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.43414234311832284,
+        "crossover_tokens_compressed": 0.4219410451049835
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.244722377121007,
+        "crossover_tokens_compressed": 1.1494261543803608
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 3.2960658158422107,
+        "crossover_tokens_compressed": 2.7027074963562012
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 18.729397662571163,
+        "crossover_tokens_compressed": 8.33337890649923
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 25,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4163724301493611,
+        "crossover_tokens_compressed": 0.4106776734101074
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.1090212222301086,
+        "crossover_tokens_compressed": 1.0695190919101092
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.489444754242014,
+        "crossover_tokens_compressed": 2.2988523087607216
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 6.592131631684421,
+        "crossover_tokens_compressed": 5.4054149927124024
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 589.6226415094302,
+        "crossover_tokens_compressed": 28.571696431082618
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 50,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4080220397184974,
+        "crossover_tokens_compressed": 0.40526851732091834
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0516928047385072,
+        "crossover_tokens_compressed": 1.0335919065360952
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.218042444460217,
+        "crossover_tokens_compressed": 2.1390381838202184
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 4.978889508484028,
+        "crossover_tokens_compressed": 4.597704617521443
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 19.666456891126494,
+        "crossover_tokens_compressed": 14.814850823132787
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": 1179.2452830188604,
+        "crossover_tokens_compressed": 57.143392862165236
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 100,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4039711984694339,
+        "crossover_tokens_compressed": 0.4026170238660001
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0251951971655402,
+        "crossover_tokens_compressed": 1.016518509160136
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.1033856094770145,
+        "crossover_tokens_compressed": 2.0671838130721905
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 4.436084888920434,
+        "crossover_tokens_compressed": 4.278076367640437
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 13.258379295714892,
+        "crossover_tokens_compressed": 11.94031020272921
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": 39.33291378225299,
+        "crossover_tokens_compressed": 29.629701646265573
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 200,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": 2358.490566037721,
+        "crossover_tokens_compressed": 114.28678572433047
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4019757914099381,
+        "crossover_tokens_compressed": 0.40130424538138726
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0124408734529904,
+        "crossover_tokens_compressed": 1.0081915980860578
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.0503903943310804,
+        "crossover_tokens_compressed": 2.033037018320272
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 4.206771218954029,
+        "crossover_tokens_compressed": 4.134367626144381
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 11.400948558920103,
+        "crossover_tokens_compressed": 10.88435860058526
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": 26.516758591429785,
+        "crossover_tokens_compressed": 23.88062040545842
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 400,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": 78.66582756450597,
+        "crossover_tokens_compressed": 59.25940329253115
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.40098546187109435,
+        "crossover_tokens_compressed": 0.40065106126114003
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.00618198209801,
+        "crossover_tokens_compressed": 1.004079091902319
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.0248817469059808,
+        "crossover_tokens_compressed": 2.0163831961721157
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 4.100780788662161,
+        "crossover_tokens_compressed": 4.066074036640544
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 10.654619843163996,
+        "crossover_tokens_compressed": 10.42345499687047
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": 22.801897117840205,
+        "crossover_tokens_compressed": 21.76871720117052
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "link_mbps": 800,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": 53.03351718285957,
+        "crossover_tokens_compressed": 47.76124081091684
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.6889785479639305,
+        "crossover_tokens_compressed": 0.5535066073467486
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 3.260906782088275
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 25,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.5061466448551205,
+        "crossover_tokens_compressed": 0.4643966622418695
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 2.102112202340912,
+        "crossover_tokens_compressed": 1.5306163447631687
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 6.52181356417655
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 50,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4468562767220053,
+        "crossover_tokens_compressed": 0.4297995885707621
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.3552779946222568,
+        "crossover_tokens_compressed": 1.2096786997607205
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 4.204224404681824,
+        "crossover_tokens_compressed": 3.0612326895263373
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 13.0436271283531
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 100,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.42213186724121626,
+        "crossover_tokens_compressed": 0.41436471600189084
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.150843337998085,
+        "crossover_tokens_compressed": 1.0948910354176948
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.7105559892445137,
+        "crossover_tokens_compressed": 2.419357399521441
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 8.408448809363648,
+        "crossover_tokens_compressed": 6.122465379052675
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 75.00246101825223
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 200,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4107680376460691,
+        "crossover_tokens_compressed": 0.4070556671818564
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0701321827272106,
+        "crossover_tokens_compressed": 1.0452964062633332
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.30168667599617,
+        "crossover_tokens_compressed": 2.1897820708353897
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 5.421111978489027,
+        "crossover_tokens_compressed": 4.838714799042882
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 29.015784586815226,
+        "crossover_tokens_compressed": 17.64712694662976
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 150.00492203650447
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 400,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.40531251215937536,
+        "crossover_tokens_compressed": 0.4034969915800202
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0338781181764045,
+        "crossover_tokens_compressed": 1.0221466219393052
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.140264365454421,
+        "crossover_tokens_compressed": 2.0905928125266664
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 4.60337335199234,
+        "crossover_tokens_compressed": 4.379564141670779
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 14.873869585911471,
+        "crossover_tokens_compressed": 12.765975271641006
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": 58.03156917363045,
+        "crossover_tokens_compressed": 35.29425389325952
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "link_mbps": 800,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 300.00984407300894
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 2.4823258400190635,
+        "crossover_tokens_compressed": 0.8982092402377381
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 25,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.6889785479639305,
+        "crossover_tokens_compressed": 0.5535066073467486
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 3.260906782088275
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 50,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.5061466448551205,
+        "crossover_tokens_compressed": 0.4643966622418695
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 2.102112202340912,
+        "crossover_tokens_compressed": 1.5306163447631687
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 6.52181356417655
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 100,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4468562767220053,
+        "crossover_tokens_compressed": 0.4297995885707621
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.3552779946222568,
+        "crossover_tokens_compressed": 1.2096786997607205
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 4.204224404681824,
+        "crossover_tokens_compressed": 3.0612326895263373
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 13.0436271283531
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 200,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.42213186724121626,
+        "crossover_tokens_compressed": 0.41436471600189084
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.150843337998085,
+        "crossover_tokens_compressed": 1.0948910354176948
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.7105559892445137,
+        "crossover_tokens_compressed": 2.419357399521441
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 8.408448809363648,
+        "crossover_tokens_compressed": 6.122465379052675
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 75.00246101825223
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 400,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 20,
+        "crossover_tokens_uncompressed": 0.4107680376460691,
+        "crossover_tokens_compressed": 0.4070556671818564
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "crossover_tokens_uncompressed": 1.0701321827272106,
+        "crossover_tokens_compressed": 1.0452964062633332
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 100,
+        "crossover_tokens_uncompressed": 2.30168667599617,
+        "crossover_tokens_compressed": 2.1897820708353897
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 200,
+        "crossover_tokens_uncompressed": 5.421111978489027,
+        "crossover_tokens_compressed": 4.838714799042882
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "crossover_tokens_uncompressed": 29.015784586815226,
+        "crossover_tokens_compressed": 17.64712694662976
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 1000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": 150.00492203650447
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "link_mbps": 800,
+        "prefill_tok_s": 2000,
+        "crossover_tokens_uncompressed": null,
+        "crossover_tokens_compressed": null
+      }
+    ],
+    "examples": [
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.10320042,
+        "t_transfer_uncompressed_s": 0.14582911999999998,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.10320042,
+        "t_transfer_uncompressed_s": 0.14582911999999998,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.040800105,
+        "t_transfer_uncompressed_s": 0.051457279999999994,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.040800105,
+        "t_transfer_uncompressed_s": 0.051457279999999994,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.10320042,
+        "t_transfer_uncompressed_s": 0.14582911999999998,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.10320042,
+        "t_transfer_uncompressed_s": 0.14582911999999998,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 5.344826879999999,
+        "t_transfer_uncompressed_s": 8.073063679999999,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 5.344826879999999,
+        "t_transfer_uncompressed_s": 8.073063679999999,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.35280168,
+        "t_transfer_uncompressed_s": 0.52331648,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 21.31930752,
+        "t_transfer_uncompressed_s": 32.23225472,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 21.31930752,
+        "t_transfer_uncompressed_s": 32.23225472,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 5.344826879999999,
+        "t_transfer_uncompressed_s": 8.073063679999999,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 5.344826879999999,
+        "t_transfer_uncompressed_s": 8.073063679999999,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "Qwen2.5-0.5B (real)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.35120672,
+        "t_transfer_uncompressed_s": 2.03326592,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 0.512,
+        "place": "recompute"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.4637355733333334,
+        "t_transfer_uncompressed_s": 0.69108864,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.4637355733333334,
+        "t_transfer_uncompressed_s": 0.69108864,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.13093389333333333,
+        "t_transfer_uncompressed_s": 0.18777216,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.13093389333333333,
+        "t_transfer_uncompressed_s": 0.18777216,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 2.048,
+        "place": "recompute"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.4637355733333334,
+        "t_transfer_uncompressed_s": 0.69108864,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.4637355733333334,
+        "t_transfer_uncompressed_s": 0.69108864,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 28.419076693333334,
+        "t_transfer_uncompressed_s": 42.969672960000004,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 28.419076693333334,
+        "t_transfer_uncompressed_s": 42.969672960000004,
+        "t_recompute_s": 8.192,
+        "place": "recompute"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 1.7949422933333334,
+        "t_transfer_uncompressed_s": 2.70435456,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 113.61630677333333,
+        "t_transfer_uncompressed_s": 171.81869184,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 113.61630677333333,
+        "t_transfer_uncompressed_s": 171.81869184,
+        "t_recompute_s": 32.768,
+        "place": "recompute"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 28.419076693333334,
+        "t_transfer_uncompressed_s": 42.969672960000004,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 28.419076693333334,
+        "t_transfer_uncompressed_s": 42.969672960000004,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "27.8B demo geometry (design record)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 7.119769173333333,
+        "t_transfer_uncompressed_s": 10.75741824,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 0.512,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.9074711466666667,
+        "t_transfer_uncompressed_s": 1.36217728,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.9074711466666667,
+        "t_transfer_uncompressed_s": 1.36217728,
+        "t_recompute_s": 0.512,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.24186778666666667,
+        "t_transfer_uncompressed_s": 0.35554432,
+        "t_recompute_s": 5.12,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 256,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.24186778666666667,
+        "t_transfer_uncompressed_s": 0.35554432,
+        "t_recompute_s": 0.512,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 2.048,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 2.048,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 0.9074711466666667,
+        "t_transfer_uncompressed_s": 1.36217728,
+        "t_recompute_s": 20.48,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 1024,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 0.9074711466666667,
+        "t_transfer_uncompressed_s": 1.36217728,
+        "t_recompute_s": 2.048,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 56.81815338666667,
+        "t_transfer_uncompressed_s": 85.91934592,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 56.81815338666667,
+        "t_transfer_uncompressed_s": 85.91934592,
+        "t_recompute_s": 8.192,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 8.192,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 81.92,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 4096,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 3.569884586666667,
+        "t_transfer_uncompressed_s": 5.38870912,
+        "t_recompute_s": 8.192,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 227.2126135466667,
+        "t_transfer_uncompressed_s": 343.61738368,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 50,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 227.2126135466667,
+        "t_transfer_uncompressed_s": 343.61738368,
+        "t_recompute_s": 32.768,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 56.81815338666667,
+        "t_transfer_uncompressed_s": 85.91934592,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 200,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 56.81815338666667,
+        "t_transfer_uncompressed_s": 85.91934592,
+        "t_recompute_s": 32.768,
+        "place": "recompute"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 50,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 327.68,
+        "place": "transfer"
+      },
+      {
+        "geometry": "32-layer GQA 8x128 (illustrative)",
+        "prefix_tokens": 16384,
+        "link_mbps": 800,
+        "prefill_tok_s": 500,
+        "t_transfer_compressed_s": 14.219538346666667,
+        "t_transfer_uncompressed_s": 21.49483648,
+        "t_recompute_s": 32.768,
+        "place": "transfer"
+      }
+    ],
+    "kpi_27b_100mbps_P100_compressed": 3.0612326895263373,
+    "kpi_27b_100mbps_P100_uncompressed": 4.204224404681824,
+    "kpi_27b_100mbps_P500_compressed": null,
+    "kpi_27b_800mbps_P500_compressed": 12.765975271641006,
+    "kpi_qwen_100mbps_P500_compressed": 14.814850823132787
+  },
+  "lora": {
+    "presets": {
+      "ShortTurbo": {
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr": "4/5"
+      },
+      "ShortFast": {
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr": "4/5"
+      },
+      "ShortSlow": {
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr": "4/5"
+      },
+      "MediumTurbo": {
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr": "4/5"
+      },
+      "MediumFast": {
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr": "4/5"
+      },
+      "MediumSlow": {
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr": "4/5"
+      },
+      "LongTurbo": {
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr": "4/8"
+      },
+      "LongFast": {
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr": "4/5"
+      },
+      "LongModerate": {
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr": "4/8"
+      }
+    },
+    "messages": {
+      "presence_beacon": 24,
+      "lease_heartbeat": 48,
+      "revocation_notice": 64,
+      "capability_advert": 160,
+      "max_payload": 239
+    },
+    "rows": [
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 17.408,
+        "t_air_ms": 22.592000000000002,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 26.55807365439093,
+        "max_messages_per_hour": 1593.484419263456
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 17.408,
+        "t_air_ms": 22.592000000000002,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 265.5807365439093,
+        "max_messages_per_hour": 15934.844192634559
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 26.368,
+        "t_air_ms": 31.551999999999996,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 19.016227180527387,
+        "max_messages_per_hour": 1140.973630831643
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 26.368,
+        "t_air_ms": 31.551999999999996,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 190.16227180527386,
+        "max_messages_per_hour": 11409.736308316431
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 32.768,
+        "t_air_ms": 37.952,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 15.809443507588533,
+        "max_messages_per_hour": 948.566610455312
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 32.768,
+        "t_air_ms": 37.952,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 158.09443507588534,
+        "max_messages_per_hour": 9485.66610455312
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 67.328,
+        "t_air_ms": 72.51199999999999,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 8.27449249779347,
+        "max_messages_per_hour": 496.46954986760824
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 67.328,
+        "t_air_ms": 72.51199999999999,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 82.7449249779347,
+        "max_messages_per_hour": 4964.695498676082
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 96.76799999999999,
+        "t_air_ms": 101.95199999999998,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 5.88512241054614,
+        "max_messages_per_hour": 353.10734463276845
+      },
+      {
+        "t_sym_ms": 0.256,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 5.183999999999999,
+        "t_payload_ms": 96.76799999999999,
+        "t_air_ms": 101.95199999999998,
+        "preset": "ShortTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 58.851224105461405,
+        "max_messages_per_hour": 3531.073446327684
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 34.816,
+        "t_air_ms": 45.184000000000005,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 13.279036827195466,
+        "max_messages_per_hour": 796.742209631728
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 34.816,
+        "t_air_ms": 45.184000000000005,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 132.79036827195466,
+        "max_messages_per_hour": 7967.422096317279
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 52.736,
+        "t_air_ms": 63.10399999999999,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 9.508113590263694,
+        "max_messages_per_hour": 570.4868154158215
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 52.736,
+        "t_air_ms": 63.10399999999999,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 95.08113590263693,
+        "max_messages_per_hour": 5704.8681541582155
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 65.536,
+        "t_air_ms": 75.904,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 7.9047217537942664,
+        "max_messages_per_hour": 474.283305227656
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 65.536,
+        "t_air_ms": 75.904,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 79.04721753794267,
+        "max_messages_per_hour": 4742.83305227656
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 134.656,
+        "t_air_ms": 145.02399999999997,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 4.137246248896735,
+        "max_messages_per_hour": 248.23477493380412
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 134.656,
+        "t_air_ms": 145.02399999999997,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 41.37246248896735,
+        "max_messages_per_hour": 2482.347749338041
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 193.53599999999997,
+        "t_air_ms": 203.90399999999997,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 2.94256120527307,
+        "max_messages_per_hour": 176.55367231638422
+      },
+      {
+        "t_sym_ms": 0.512,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 10.367999999999999,
+        "t_payload_ms": 193.53599999999997,
+        "t_air_ms": 203.90399999999997,
+        "preset": "ShortFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 7,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 29.425612052730703,
+        "max_messages_per_hour": 1765.536723163842
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 64.512,
+        "t_air_ms": 85.24799999999999,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 7.038288288288289,
+        "max_messages_per_hour": 422.29729729729735
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 64.512,
+        "t_air_ms": 85.24799999999999,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 70.3828828828829,
+        "max_messages_per_hour": 4222.972972972973
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 95.232,
+        "t_air_ms": 115.96799999999999,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 5.173841059602649,
+        "max_messages_per_hour": 310.43046357615896
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 95.232,
+        "t_air_ms": 115.96799999999999,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 51.7384105960265,
+        "max_messages_per_hour": 3104.30463576159
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 115.71199999999999,
+        "t_air_ms": 136.44799999999998,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 4.397279549718575,
+        "max_messages_per_hour": 263.8367729831145
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 115.71199999999999,
+        "t_air_ms": 136.44799999999998,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 43.97279549718575,
+        "max_messages_per_hour": 2638.367729831145
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 238.59199999999998,
+        "t_air_ms": 259.328,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 2.3136722606120435,
+        "max_messages_per_hour": 138.82033563672263
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 238.59199999999998,
+        "t_air_ms": 259.328,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 23.136722606120436,
+        "max_messages_per_hour": 1388.2033563672262
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 340.99199999999996,
+        "t_air_ms": 361.72799999999995,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.6587048832271765,
+        "max_messages_per_hour": 99.52229299363059
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 340.99199999999996,
+        "t_air_ms": 361.72799999999995,
+        "preset": "ShortSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 8,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 16.587048832271766,
+        "max_messages_per_hour": 995.2229299363058
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 59.392,
+        "t_air_ms": 80.128,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 7.488019169329074,
+        "max_messages_per_hour": 449.2811501597444
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 59.392,
+        "t_air_ms": 80.128,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 74.88019169329074,
+        "max_messages_per_hour": 4492.8115015974445
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 84.992,
+        "t_air_ms": 105.728,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 5.674939467312349,
+        "max_messages_per_hour": 340.4963680387409
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 84.992,
+        "t_air_ms": 105.728,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 56.74939467312349,
+        "max_messages_per_hour": 3404.9636803874096
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 100.352,
+        "t_air_ms": 121.08800000000001,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 4.95507399577167,
+        "max_messages_per_hour": 297.3044397463002
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 100.352,
+        "t_air_ms": 121.08800000000001,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 49.5507399577167,
+        "max_messages_per_hour": 2973.044397463002
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 212.992,
+        "t_air_ms": 233.72799999999998,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 2.5670865279299018,
+        "max_messages_per_hour": 154.0251916757941
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 212.992,
+        "t_air_ms": 233.72799999999998,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 25.670865279299015,
+        "max_messages_per_hour": 1540.251916757941
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 300.032,
+        "t_air_ms": 320.7679999999999,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.8705107741420595,
+        "max_messages_per_hour": 112.23064644852357
+      },
+      {
+        "t_sym_ms": 1.024,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 20.735999999999997,
+        "t_payload_ms": 300.032,
+        "t_air_ms": 320.7679999999999,
+        "preset": "MediumTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 18.705107741420594,
+        "max_messages_per_hour": 1122.3064644852357
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 118.784,
+        "t_air_ms": 160.256,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 3.744009584664537,
+        "max_messages_per_hour": 224.6405750798722
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 118.784,
+        "t_air_ms": 160.256,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 37.44009584664537,
+        "max_messages_per_hour": 2246.4057507987222
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 169.984,
+        "t_air_ms": 211.456,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 2.8374697336561745,
+        "max_messages_per_hour": 170.24818401937046
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 169.984,
+        "t_air_ms": 211.456,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 28.374697336561745,
+        "max_messages_per_hour": 1702.4818401937048
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 200.704,
+        "t_air_ms": 242.17600000000002,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 2.477536997885835,
+        "max_messages_per_hour": 148.6522198731501
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 200.704,
+        "t_air_ms": 242.17600000000002,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 24.77536997885835,
+        "max_messages_per_hour": 1486.522198731501
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 425.984,
+        "t_air_ms": 467.45599999999996,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.2835432639649509,
+        "max_messages_per_hour": 77.01259583789705
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 425.984,
+        "t_air_ms": 467.45599999999996,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 12.835432639649508,
+        "max_messages_per_hour": 770.1259583789705
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 600.064,
+        "t_air_ms": 641.5359999999998,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.9352553870710297,
+        "max_messages_per_hour": 56.115323224261786
+      },
+      {
+        "t_sym_ms": 2.048,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 41.471999999999994,
+        "t_payload_ms": 600.064,
+        "t_air_ms": 641.5359999999998,
+        "preset": "MediumFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 9,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 9.352553870710297,
+        "max_messages_per_hour": 561.1532322426178
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 217.088,
+        "t_air_ms": 300.032,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.9997866894197953,
+        "max_messages_per_hour": 119.98720136518772
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 217.088,
+        "t_air_ms": 300.032,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 19.997866894197955,
+        "max_messages_per_hour": 1199.8720136518773
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 299.008,
+        "t_air_ms": 381.95199999999994,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.5708780160857911,
+        "max_messages_per_hour": 94.25268096514746
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 299.008,
+        "t_air_ms": 381.95199999999994,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 15.708780160857911,
+        "max_messages_per_hour": 942.5268096514747
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 380.928,
+        "t_air_ms": 463.87199999999996,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.2934602649006623,
+        "max_messages_per_hour": 77.60761589403974
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 380.928,
+        "t_air_ms": 463.87199999999996,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 12.934602649006624,
+        "max_messages_per_hour": 776.0761589403975
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 770.048,
+        "t_air_ms": 852.992,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.7034063625450181,
+        "max_messages_per_hour": 42.20438175270108
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 770.048,
+        "t_air_ms": 852.992,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 7.03406362545018,
+        "max_messages_per_hour": 422.04381752701084
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1097.728,
+        "t_air_ms": 1180.672,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.5081851691240242,
+        "max_messages_per_hour": 30.491110147441457
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1097.728,
+        "t_air_ms": 1180.672,
+        "preset": "MediumSlow",
+        "bandwidth_hz": 250000.0,
+        "sf": 10,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 5.081851691240243,
+        "max_messages_per_hour": 304.9111014744146
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 294.91200000000003,
+        "t_air_ms": 377.856,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.5879065040650406,
+        "max_messages_per_hour": 95.27439024390245
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 294.91200000000003,
+        "t_air_ms": 377.856,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 15.879065040650406,
+        "max_messages_per_hour": 952.7439024390244
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 425.984,
+        "t_air_ms": 508.92799999999994,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.1789486921529175,
+        "max_messages_per_hour": 70.73692152917506
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 425.984,
+        "t_air_ms": 508.92799999999994,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 11.789486921529177,
+        "max_messages_per_hour": 707.3692152917506
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 524.288,
+        "t_air_ms": 607.232,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.9880902192242833,
+        "max_messages_per_hour": 59.285413153457
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 524.288,
+        "t_air_ms": 607.232,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 9.880902192242834,
+        "max_messages_per_hour": 592.85413153457
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1081.3439999999998,
+        "t_air_ms": 1164.2879999999998,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.5153364116094987,
+        "max_messages_per_hour": 30.920184696569926
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1081.3439999999998,
+        "t_air_ms": 1164.2879999999998,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 5.153364116094988,
+        "max_messages_per_hour": 309.20184696569925
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1572.864,
+        "t_air_ms": 1655.808,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.362360853432282,
+        "max_messages_per_hour": 21.741651205936922
+      },
+      {
+        "t_sym_ms": 4.096,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 82.94399999999999,
+        "t_payload_ms": 1572.864,
+        "t_air_ms": 1655.808,
+        "preset": "LongTurbo",
+        "bandwidth_hz": 500000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 3.62360853432282,
+        "max_messages_per_hour": 217.4165120593692
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 393.216,
+        "t_air_ms": 559.104,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 1.0731456043956042,
+        "max_messages_per_hour": 64.38873626373626
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 393.216,
+        "t_air_ms": 559.104,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 10.731456043956044,
+        "max_messages_per_hour": 643.8873626373626
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 557.056,
+        "t_air_ms": 722.9440000000001,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.8299398016997166,
+        "max_messages_per_hour": 49.796388101983
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 557.056,
+        "t_air_ms": 722.9440000000001,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 8.299398016997166,
+        "max_messages_per_hour": 497.96388101982996
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 679.936,
+        "t_air_ms": 845.824,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.7093674334140436,
+        "max_messages_per_hour": 42.562046004842614
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 679.936,
+        "t_air_ms": 845.824,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 7.093674334140436,
+        "max_messages_per_hour": 425.6204600484262
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 1376.2559999999999,
+        "t_air_ms": 1542.144,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.3890687250996016,
+        "max_messages_per_hour": 23.344123505976096
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 1376.2559999999999,
+        "t_air_ms": 1542.144,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 3.8906872509960158,
+        "max_messages_per_hour": 233.44123505976094
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 1990.656,
+        "t_air_ms": 2156.544,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.2782229344729345,
+        "max_messages_per_hour": 16.693376068376068
+      },
+      {
+        "t_sym_ms": 8.192,
+        "ldro": 0,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 165.88799999999998,
+        "t_payload_ms": 1990.656,
+        "t_air_ms": 2156.544,
+        "preset": "LongFast",
+        "bandwidth_hz": 250000.0,
+        "sf": 11,
+        "cr_denominator": 5,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 2.7822293447293447,
+        "max_messages_per_hour": 166.93376068376068
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 1310.7199999999998,
+        "t_air_ms": 1642.4959999999999,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.3652976932668329,
+        "max_messages_per_hour": 21.917861596009978
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 40,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 1310.7199999999998,
+        "t_air_ms": 1642.4959999999999,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "presence_beacon",
+        "payload_bytes": 24,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 3.6529769326683295,
+        "max_messages_per_hour": 219.17861596009976
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 2097.152,
+        "t_air_ms": 2428.928,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.24702255480607083,
+        "max_messages_per_hour": 14.82135328836425
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 64,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 2097.152,
+        "t_air_ms": 2428.928,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "lease_heartbeat",
+        "payload_bytes": 48,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 2.4702255480607085,
+        "max_messages_per_hour": 148.2135328836425
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 2490.3679999999995,
+        "t_air_ms": 2822.144,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.21260431785195938,
+        "max_messages_per_hour": 12.756259071117563
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 80,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 2490.3679999999995,
+        "t_air_ms": 2822.144,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "revocation_notice",
+        "payload_bytes": 64,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 2.126043178519594,
+        "max_messages_per_hour": 127.56259071117563
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 5373.952,
+        "t_air_ms": 5705.728,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.10515748384781048,
+        "max_messages_per_hour": 6.309449030868628
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 176,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 5373.952,
+        "t_air_ms": 5705.728,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "capability_advert",
+        "payload_bytes": 160,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 1.0515748384781047,
+        "max_messages_per_hour": 63.09449030868629
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 7602.176,
+        "t_air_ms": 7933.951999999999,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.01,
+        "max_messages_per_minute": 0.07562435467217347,
+        "max_messages_per_hour": 4.537461280330408
+      },
+      {
+        "t_sym_ms": 16.384,
+        "ldro": 1,
+        "on_air_bytes": 255,
+        "t_preamble_ms": 331.77599999999995,
+        "t_payload_ms": 7602.176,
+        "t_air_ms": 7933.951999999999,
+        "preset": "LongModerate",
+        "bandwidth_hz": 125000.0,
+        "sf": 11,
+        "cr_denominator": 8,
+        "message": "max_payload",
+        "payload_bytes": 239,
+        "duty_cycle": 0.1,
+        "max_messages_per_minute": 0.7562435467217347,
+        "max_messages_per_hour": 45.37461280330408
+      }
+    ],
+    "heartbeat_budgets": [
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 4
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 2
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 8
+      },
+      {
+        "preset": "LongFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 722.9440000000001,
+        "nodes_supported": 41
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 211.456,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 211.456,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 211.456,
+        "nodes_supported": 2
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 211.456,
+        "nodes_supported": 14
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 211.456,
+        "nodes_supported": 2
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 211.456,
+        "nodes_supported": 9
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 211.456,
+        "nodes_supported": 28
+      },
+      {
+        "preset": "MediumFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 211.456,
+        "nodes_supported": 141
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 0
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 3
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 9
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.01,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 47
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 5,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 7
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 20,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 31
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 60,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 95
+      },
+      {
+        "preset": "ShortFast",
+        "duty_cycle": 0.1,
+        "heartbeat_interval_s": 300,
+        "t_air_ms": 63.10399999999999,
+        "nodes_supported": 475
+      }
+    ],
+    "kpi_longfast_heartbeat_ms": 722.9440000000001,
+    "kpi_shortfast_heartbeat_ms": 63.10399999999999,
+    "kpi_longfast_maxpayload_ms": 2156.544,
+    "kpi_shortfast_maxpayload_ms": 203.90399999999997,
+    "kpi_longfast_nodes_20s_10pct": 2,
+    "kpi_longfast_nodes_20s_1pct": 0,
+    "kpi_shortfast_nodes_20s_10pct": 31,
+    "kpi_shortfast_nodes_5s_1pct": 0,
+    "kpi_longfast_nodes_300s_1pct": 4,
+    "kpi_4096_kv_MiB_over_shortfast_hours": 11.92796879799163
+  },
+  "churn": {
+    "model": {
+      "nodes": 6,
+      "sim_seconds": 7200,
+      "mean_down_s": 60.0,
+      "arrival_mean_s": 20.0,
+      "service_mean_s": 30.0,
+      "heartbeat_s": 5.0,
+      "consumption_interval_s": 2.0
+    },
+    "configs": [
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 361.0,
+            "q1": 348.25,
+            "q3": 371.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 339.5,
+            "q1": 328.75,
+            "q3": 350.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 16.0,
+            "q1": 14.25,
+            "q3": 17.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 5.75,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 5.75,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 17.0,
+            "q1": 14.0,
+            "q3": 20.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.677306169550558,
+            "q1": 7.330582029241668,
+            "q3": 7.931748601561935,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 360.0,
+            "q1": 348.25,
+            "q3": 371.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 345.5,
+            "q1": 335.0,
+            "q3": 358.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 16.0,
+            "q1": 14.25,
+            "q3": 18.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 95.5,
+            "q1": 79.0,
+            "q3": 122.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 15.0,
+            "q1": 14.0,
+            "q3": 15.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 10.0,
+            "q1": 8.0,
+            "q3": 11.75,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.464158185375936,
+            "q1": 6.910036384081366,
+            "q3": 7.907573008772829,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 360.0,
+            "q1": 340.25,
+            "q3": 370.5,
+            "n": 30
+          },
+          "completed": {
+            "median": 358.5,
+            "q1": 337.75,
+            "q3": 369.5,
+            "n": 30
+          },
+          "replans": {
+            "median": 17.0,
+            "q1": 13.0,
+            "q3": 21.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 6.0,
+            "q1": 3.25,
+            "q3": 7.75,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 6.0,
+            "q1": 3.25,
+            "q3": 7.75,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 241.0,
+            "q1": 181.5,
+            "q3": 346.5,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 51.5,
+            "q1": 40.25,
+            "q3": 67.5,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.445908781719936,
+            "q1": 7.092671524324004,
+            "q3": 7.769615809654624,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 359.5,
+            "q1": 346.0,
+            "q3": 372.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 343.0,
+            "q1": 323.25,
+            "q3": 355.5,
+            "n": 30
+          },
+          "replans": {
+            "median": 15.0,
+            "q1": 13.0,
+            "q3": 17.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 3.0,
+            "q1": 3.0,
+            "q3": 5.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 3.0,
+            "q1": 3.0,
+            "q3": 5.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 17.5,
+            "q1": 14.0,
+            "q3": 20.75,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.76246518238372,
+            "q1": 17.048676079512234,
+            "q3": 18.122838572992805,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 355.5,
+            "q1": 347.5,
+            "q3": 372.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 346.0,
+            "q1": 334.75,
+            "q3": 359.5,
+            "n": 30
+          },
+          "replans": {
+            "median": 16.5,
+            "q1": 15.0,
+            "q3": 19.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 105.0,
+            "q1": 83.0,
+            "q3": 141.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 14.0,
+            "q1": 13.0,
+            "q3": 15.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 10.0,
+            "q1": 7.0,
+            "q3": 13.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.647103476467237,
+            "q1": 17.048676079512234,
+            "q3": 18.017031320984188,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 355.5,
+            "q1": 349.75,
+            "q3": 372.5,
+            "n": 30
+          },
+          "completed": {
+            "median": 353.5,
+            "q1": 348.25,
+            "q3": 371.5,
+            "n": 30
+          },
+          "replans": {
+            "median": 18.0,
+            "q1": 15.0,
+            "q3": 22.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 4.0,
+            "q1": 3.0,
+            "q3": 6.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 288.5,
+            "q1": 173.25,
+            "q3": 341.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 50.5,
+            "q1": 39.0,
+            "q3": 75.5,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.65689444405173,
+            "q1": 17.469990748627964,
+            "q3": 17.958856434797667,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 349.5,
+            "q1": 343.0,
+            "q3": 363.5,
+            "n": 30
+          },
+          "completed": {
+            "median": 329.5,
+            "q1": 325.0,
+            "q3": 342.25,
+            "n": 30
+          },
+          "replans": {
+            "median": 12.0,
+            "q1": 10.0,
+            "q3": 14.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 3.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 3.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 17.5,
+            "q1": 14.0,
+            "q3": 20.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.45368502866404,
+            "q1": 57.14875678112769,
+            "q3": 58.01474497913921,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 354.0,
+            "q1": 343.0,
+            "q3": 371.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 340.5,
+            "q1": 332.25,
+            "q3": 355.0,
+            "n": 30
+          },
+          "replans": {
+            "median": 12.5,
+            "q1": 10.0,
+            "q3": 16.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 2.5,
+            "q1": 2.0,
+            "q3": 3.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 2.5,
+            "q1": 2.0,
+            "q3": 3.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 116.5,
+            "q1": 78.75,
+            "q3": 145.5,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 14.0,
+            "q1": 13.0,
+            "q3": 15.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 11.0,
+            "q1": 8.0,
+            "q3": 13.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.56577504139352,
+            "q1": 57.24178538386434,
+            "q3": 58.0162409576385,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 356.5,
+            "q1": 341.25,
+            "q3": 374.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 354.5,
+            "q1": 338.25,
+            "q3": 373.0,
+            "n": 30
+          },
+          "replans": {
+            "median": 15.0,
+            "q1": 11.25,
+            "q3": 17.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 4.0,
+            "q1": 2.25,
+            "q3": 5.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 4.0,
+            "q1": 2.25,
+            "q3": 5.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 308.0,
+            "q1": 215.25,
+            "q3": 432.5,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 60.5,
+            "q1": 49.25,
+            "q3": 83.75,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.75,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.48026503489035,
+            "q1": 56.91067292724195,
+            "q3": 57.89981679049031,
+            "n": 30
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 353.5,
+            "q3": 374.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 362.0,
+            "q1": 348.0,
+            "q3": 371.5,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 4.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.325064829003281,
+            "q1": 6.74523350040721,
+            "q3": 7.897958616164061,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 353.5,
+            "q3": 374.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 363.5,
+            "q1": 350.0,
+            "q3": 371.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 17.0,
+            "q1": 7.5,
+            "q3": 24.75,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 10.5,
+            "q1": 5.0,
+            "q3": 12.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 2.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.325064829003281,
+            "q1": 6.74523350040721,
+            "q3": 7.897958616164061,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 10.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 353.5,
+            "q3": 374.75,
+            "n": 30
+          },
+          "completed": {
+            "median": 364.0,
+            "q1": 351.5,
+            "q3": 372.0,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.0,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.75,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 37.0,
+            "q1": 10.75,
+            "q3": 71.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 19.5,
+            "q1": 8.25,
+            "q3": 41.75,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 7.325064829003281,
+            "q1": 6.74523350040721,
+            "q3": 7.897958616164061,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.0,
+            "q1": 352.5,
+            "q3": 370.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 362.0,
+            "q1": 347.5,
+            "q3": 365.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 3.0,
+            "q1": 1.25,
+            "q3": 3.75,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.306212097337948,
+            "q1": 16.629788519536646,
+            "q3": 17.925340961345682,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.0,
+            "q1": 352.5,
+            "q3": 370.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 363.5,
+            "q1": 349.75,
+            "q3": 366.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 14.5,
+            "q1": 7.5,
+            "q3": 24.75,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 10.5,
+            "q1": 5.25,
+            "q3": 13.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 1.0,
+            "q1": 1.0,
+            "q3": 2.75,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.306212097337948,
+            "q1": 16.629788519536646,
+            "q3": 17.925340961345682,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 20.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.0,
+            "q1": 352.5,
+            "q3": 370.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 364.0,
+            "q1": 352.0,
+            "q3": 369.0,
+            "n": 30
+          },
+          "replans": {
+            "median": 3.0,
+            "q1": 2.0,
+            "q3": 4.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 1.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 44.0,
+            "q1": 21.0,
+            "q3": 75.25,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 26.5,
+            "q1": 14.75,
+            "q3": 41.25,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 17.306212097337948,
+            "q1": 16.629788519536646,
+            "q3": 17.925340961345682,
+            "n": 28
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 0.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 352.75,
+            "q3": 374.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 362.0,
+            "q1": 347.0,
+            "q3": 370.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 2.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 4.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.481989144785985,
+            "q1": 56.79591132086705,
+            "q3": 58.309599765823805,
+            "n": 27
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 30.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 352.75,
+            "q3": 374.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 362.0,
+            "q1": 349.25,
+            "q3": 371.0,
+            "n": 30
+          },
+          "replans": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 2.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 13.5,
+            "q1": 6.0,
+            "q3": 29.5,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 8.0,
+            "q1": 4.0,
+            "q3": 12.75,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 1.0,
+            "q1": 0.0,
+            "q3": 2.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.481989144785985,
+            "q1": 56.79591132086705,
+            "q3": 58.309599765823805,
+            "n": 27
+          }
+        }
+      },
+      {
+        "mean_up_s": 3600.0,
+        "lease_ttl_s": 60.0,
+        "decision_cache_s": 300.0,
+        "heartbeat_s": 5.0,
+        "seeds": 30,
+        "summary": {
+          "sessions": {
+            "median": 365.5,
+            "q1": 352.75,
+            "q3": 374.0,
+            "n": 30
+          },
+          "completed": {
+            "median": 363.0,
+            "q1": 351.0,
+            "q3": 372.75,
+            "n": 30
+          },
+          "replans": {
+            "median": 2.0,
+            "q1": 1.0,
+            "q3": 2.75,
+            "n": 30
+          },
+          "stale_completions_unfenced_accepted": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_completions_fenced_rejected": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "stale_auth_cached": {
+            "median": 28.0,
+            "q1": 9.0,
+            "q3": 80.25,
+            "n": 30
+          },
+          "stale_auth_live": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "lost_unreplannable": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "max_stale_auth_per_session": {
+            "median": 23.5,
+            "q1": 6.25,
+            "q3": 53.75,
+            "n": 30
+          },
+          "fail_closed_on_dead_path": {
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "n": 30
+          },
+          "detect_latency_median": {
+            "median": 57.481989144785985,
+            "q1": 56.79591132086705,
+            "q3": 58.309599765823805,
+            "n": 27
+          }
+        }
+      }
+    ],
+    "kpi_sessions_median": 355.5,
+    "kpi_replans_median": 16.5,
+    "kpi_stale_unfenced_median": 3.0,
+    "kpi_stale_fenced_rejected_median": 3.0,
+    "kpi_stale_auth_cached30_median": 105.0,
+    "kpi_stale_auth_cached300_median": 288.5,
+    "kpi_stale_auth_live_median": 0.0,
+    "kpi_max_stale_auth_per_session_cache30": 14.0,
+    "kpi_max_stale_auth_per_session_cache300": 50.5,
+    "kpi_fail_closed_live_median": 17.5,
+    "kpi_detect_latency_ttl20": 17.647103476467237,
+    "kpi_detect_latency_ttl60": 57.56577504139352,
+    "kpi_detect_latency_ttl10": 7.464158185375936
+  }
+}

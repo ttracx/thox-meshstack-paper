@@ -1,0 +1,1181 @@
+{
+  "evidence_label": "calculated from public class floors, real or published model geometry, and stated assumptions; not a measurement",
+  "assumptions": {
+    "class_floors_bytes": {
+      "Air": 2000000000,
+      "Mini": 4000000000,
+      "Clip": 6000000000
+    },
+    "usable_fractions": [
+      0.5,
+      0.65,
+      0.8
+    ],
+    "workspace_per_stage_bytes": 268435456,
+    "system_budget_fraction": 0.25,
+    "placement": "first-fit contiguous in node order, anchor first; not optimal"
+  },
+  "models": {
+    "qwen05b": {
+      "name": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "layers": 24,
+      "total_weight_bytes": 988065536,
+      "kv_bytes_per_token": 12288,
+      "source": "model.safetensors of Qwen/Qwen2.5-0.5B-Instruct, parameter counts per tensor"
+    },
+    "phi4mini": {
+      "name": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "layers": 32,
+      "total_weight_bytes": 2493840576.0,
+      "kv_bytes_per_token": 131072,
+      "source": "published GGUF size 2,493,840,576 B; Phi-4-mini public geometry; uniform split is an assumption"
+    },
+    "demo27b": {
+      "name": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "layers": 64,
+      "total_weight_bytes": 15676630630.4,
+      "kv_bytes_per_token": 65536.0,
+      "source": "14.6 GiB total weights, 64 layers, 16 attention layers x 4 KV heads x 256 head_dim, bf16 KV; SSM state not priced"
+    }
+  },
+  "scenarios": [
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.5,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 23,
+      "layers_total": 24,
+      "stages": [],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 11,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 23,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 22,
+          "weight_bytes": 1748805703.9199991,
+          "kv_bytes": 192937984.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-1",
+          "layer_start": 23,
+          "layer_end": 31,
+          "weight_bytes": 745034872.08,
+          "kv_bytes": 75497472.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 24,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 56,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.5,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 21,
+      "layers_total": 24,
+      "stages": [],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 8,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 18,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 27,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 21,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 52,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.5,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 15,
+      "layers_total": 24,
+      "stages": [],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 4,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 9,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.5,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 13,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 20,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.5,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 48,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.65,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "placed",
+      "layers_placed": 24,
+      "layers_total": 24,
+      "stages": [
+        {
+          "node": "Air-0",
+          "layer_start": 0,
+          "layer_end": 23,
+          "weight_bytes": 988065536.0,
+          "kv_bytes": 25165824.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 14,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 31,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 30,
+          "weight_bytes": 2322389036.3999987,
+          "kv_bytes": 260046848.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-1",
+          "layer_start": 31,
+          "layer_end": 31,
+          "weight_bytes": 171451539.60000002,
+          "kv_bytes": 8388608.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 30,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "placed",
+      "layers_placed": 64,
+      "layers_total": 64,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 9,
+          "weight_bytes": 2449473535.9999995,
+          "kv_bytes": 25165824.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Clip-1",
+          "layer_start": 10,
+          "layer_end": 24,
+          "weight_bytes": 3674210303.999999,
+          "kv_bytes": 33554432.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-2",
+          "layer_start": 25,
+          "layer_end": 29,
+          "weight_bytes": 1224736768.0,
+          "kv_bytes": 8388608.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Hub16-3",
+          "layer_start": 30,
+          "layer_end": 63,
+          "weight_bytes": 8328210022.400005,
+          "kv_bytes": 67108864.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.65,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "placed",
+      "layers_placed": 24,
+      "layers_total": 24,
+      "stages": [
+        {
+          "node": "Air-0",
+          "layer_start": 0,
+          "layer_end": 23,
+          "weight_bytes": 988065536.0,
+          "kv_bytes": 100663296.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 11,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 23,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 22,
+          "weight_bytes": 1748805703.9199991,
+          "kv_bytes": 771751936.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-1",
+          "layer_start": 23,
+          "layer_end": 31,
+          "weight_bytes": 745034872.08,
+          "kv_bytes": 301989888.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 30,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "placed",
+      "layers_placed": 64,
+      "layers_total": 64,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 9,
+          "weight_bytes": 2449473535.9999995,
+          "kv_bytes": 100663296.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Clip-1",
+          "layer_start": 10,
+          "layer_end": 24,
+          "weight_bytes": 3674210303.999999,
+          "kv_bytes": 134217728.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-2",
+          "layer_start": 25,
+          "layer_end": 29,
+          "weight_bytes": 1224736768.0,
+          "kv_bytes": 33554432.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Hub16-3",
+          "layer_start": 30,
+          "layer_end": 63,
+          "weight_bytes": 8328210022.400005,
+          "kv_bytes": 268435456.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.65,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 22,
+      "layers_total": 24,
+      "stages": [],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 5,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 12,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.65,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 18,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 25,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.65,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 62,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.8,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "placed",
+      "layers_placed": 24,
+      "layers_total": 24,
+      "stages": [
+        {
+          "node": "Air-0",
+          "layer_start": 0,
+          "layer_end": 23,
+          "weight_bytes": 988065536.0,
+          "kv_bytes": 25165824.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 18,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 31,
+          "weight_bytes": 2493840575.9999986,
+          "kv_bytes": 268435456.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 31,
+          "weight_bytes": 2493840575.9999986,
+          "kv_bytes": 268435456.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 37,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 2048,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "placed",
+      "layers_placed": 64,
+      "layers_total": 64,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 11,
+          "weight_bytes": 2939368243.1999993,
+          "kv_bytes": 25165824.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Clip-1",
+          "layer_start": 12,
+          "layer_end": 30,
+          "weight_bytes": 4653999718.4,
+          "kv_bytes": 41943040.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-2",
+          "layer_start": 31,
+          "layer_end": 36,
+          "weight_bytes": 1469684121.6,
+          "kv_bytes": 16777216.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Hub16-3",
+          "layer_start": 37,
+          "layer_end": 63,
+          "weight_bytes": 6613578547.200003,
+          "kv_bytes": 50331648.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.8,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "placed",
+      "layers_placed": 24,
+      "layers_total": 24,
+      "stages": [
+        {
+          "node": "Air-0",
+          "layer_start": 0,
+          "layer_end": 23,
+          "weight_bytes": 988065536.0,
+          "kv_bytes": 100663296.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 14,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 29,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "placed",
+      "layers_placed": 32,
+      "layers_total": 32,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 28,
+          "weight_bytes": 2178993203.279999,
+          "kv_bytes": 973078528.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-1",
+          "layer_start": 29,
+          "layer_end": 31,
+          "weight_bytes": 314847372.72,
+          "kv_bytes": 100663296.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 36,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 8192,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "placed",
+      "layers_placed": 64,
+      "layers_total": 64,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 11,
+          "weight_bytes": 2939368243.1999993,
+          "kv_bytes": 100663296.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Clip-1",
+          "layer_start": 12,
+          "layer_end": 29,
+          "weight_bytes": 4409052364.799999,
+          "kv_bytes": 167772160.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-2",
+          "layer_start": 30,
+          "layer_end": 35,
+          "weight_bytes": 1469684121.6,
+          "kv_bytes": 33554432.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Hub16-3",
+          "layer_start": 36,
+          "layer_end": 63,
+          "weight_bytes": 6858525900.800003,
+          "kv_bytes": 234881024.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "A: 0.5B on one Air",
+      "usable_fraction": 0.8,
+      "model": "Qwen2.5-0.5B-Instruct bf16 (real geometry)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "placed",
+      "layers_placed": 24,
+      "layers_total": 24,
+      "stages": [
+        {
+          "node": "Air-0",
+          "layer_start": 0,
+          "layer_end": 23,
+          "weight_bytes": 988065536.0,
+          "kv_bytes": 402653184.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 988065536
+    },
+    {
+      "label": "B1: Phi4Mini on one Air",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Air-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 7,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B2: Phi4Mini on one Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 15,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "B3: Phi4Mini on Air+Mini",
+      "usable_fraction": 0.8,
+      "model": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Air-1"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 22,
+      "layers_total": 32,
+      "stages": [],
+      "total_weight_bytes": 2493840576.0
+    },
+    {
+      "label": "C1: 27B demo on Mini+Clip+Air trio",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2"
+      ],
+      "result": "Unplaceable",
+      "layers_placed": 33,
+      "layers_total": 64,
+      "stages": [],
+      "total_weight_bytes": 15676630630.4
+    },
+    {
+      "label": "C2: 27B demo on Mini+Clip+Air+16GB hub",
+      "usable_fraction": 0.8,
+      "model": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)",
+      "context_tokens": 32768,
+      "nodes": [
+        "Mini-0",
+        "Clip-1",
+        "Air-2",
+        "Hub16-3"
+      ],
+      "result": "placed",
+      "layers_placed": 64,
+      "layers_total": 64,
+      "stages": [
+        {
+          "node": "Mini-0",
+          "layer_start": 0,
+          "layer_end": 10,
+          "weight_bytes": 2694420889.5999994,
+          "kv_bytes": 402653184.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Clip-1",
+          "layer_start": 11,
+          "layer_end": 27,
+          "weight_bytes": 4164105011.199999,
+          "kv_bytes": 536870912.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Air-2",
+          "layer_start": 28,
+          "layer_end": 32,
+          "weight_bytes": 1224736768.0,
+          "kv_bytes": 268435456.0,
+          "workspace_bytes": 268435456
+        },
+        {
+          "node": "Hub16-3",
+          "layer_start": 33,
+          "layer_end": 63,
+          "weight_bytes": 7593367961.600004,
+          "kv_bytes": 939524096.0,
+          "workspace_bytes": 268435456
+        }
+      ],
+      "total_weight_bytes": 15676630630.4
+    }
+  ],
+  "clip_nodes_needed_for_27b": [
+    {
+      "usable_fraction": 0.5,
+      "context_tokens": 2048,
+      "clip_nodes_needed": 6
+    },
+    {
+      "usable_fraction": 0.5,
+      "context_tokens": 8192,
+      "clip_nodes_needed": 6
+    },
+    {
+      "usable_fraction": 0.65,
+      "context_tokens": 2048,
+      "clip_nodes_needed": 5
+    },
+    {
+      "usable_fraction": 0.65,
+      "context_tokens": 8192,
+      "clip_nodes_needed": 5
+    },
+    {
+      "usable_fraction": 0.8,
+      "context_tokens": 2048,
+      "clip_nodes_needed": 4
+    },
+    {
+      "usable_fraction": 0.8,
+      "context_tokens": 8192,
+      "clip_nodes_needed": 4
+    }
+  ]
+}

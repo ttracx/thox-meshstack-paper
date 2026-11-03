@@ -1,0 +1,72 @@
+{
+  "evidence_label": "measured on the authoring host (stdlib hmac/hashlib); construction properties are exact tests",
+  "host": {
+    "cpu_count": 2
+  },
+  "properties": {
+    "P1_prefix_sharing": true,
+    "P2_divergence": true,
+    "P3_model_binding": true,
+    "P4_principal_binding": true,
+    "P5_determinism": true,
+    "known_answer": {
+      "secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "fingerprint_hex": "abababababababababababababababababababababababababababababababab",
+      "chunks": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "keys_hex": [
+        "57583d1c59f44e361985646b98a63933e762bdb19f1734f866873953cb85ecb2",
+        "51be4cd6edb0062c897751ab9e65f3a53626788d8f4d0b5edb3e8c532caefa14"
+      ]
+    }
+  },
+  "timing": {
+    "per_chunk": [
+      {
+        "chunk_tokens": 64,
+        "us_median": 9.667999961493479,
+        "us_q1": 9.340250130662753,
+        "us_q3": 9.877749903353106,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 256,
+        "us_median": 23.57900007154967,
+        "us_q1": 21.69049997746697,
+        "us_q3": 33.96524999743633,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 1024,
+        "us_median": 40.444000092065835,
+        "us_q1": 37.46250001768203,
+        "us_q3": 55.94925005425466,
+        "reps": 30
+      },
+      {
+        "chunk_tokens": 4096,
+        "us_median": 136.53299993166002,
+        "us_q1": 132.64675004620585,
+        "us_q3": 156.97375005174763,
+        "reps": 30
+      }
+    ],
+    "chain_4096_tokens_64_per_chunk": {
+      "chunks": 64,
+      "us_median": 373.1614999651356,
+      "us_q1": 352.26799991505686,
+      "us_q3": 397.4284999230804,
+      "reps": 30
+    }
+  }
+}

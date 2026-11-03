@@ -1,0 +1,110 @@
+[
+  {
+    "name": "paper",
+    "width": 1280,
+    "scheme": "light",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 1280,
+    "scheme": "dark",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 390,
+    "scheme": "light",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 390,
+    "scheme": "dark",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "demo",
+    "width": 1280,
+    "scheme": "light",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "keyChanged": true,
+      "hubPlaced": true,
+      "placeShort": "T_xfer (compressed) = 907.7 ms   T_xfer (raw) = 1362.2 ms   T_rec = 1280.0 ms\nPLACE -> TRANSFER (cost only; a live grant path is still required)\ncrossover L* = 13 tokens",
+      "lora": "symbol 8.19 ms; preamble 165.9 ms; payload 557.1 ms; time on air 722.9 ms for 64 bytes on air"
+    }
+  },
+  {
+    "name": "demo",
+    "width": 1280,
+    "scheme": "dark",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "keyChanged": true,
+      "hubPlaced": true,
+      "placeShort": "T_xfer (compressed) = 907.7 ms   T_xfer (raw) = 1362.2 ms   T_rec = 1280.0 ms\nPLACE -> TRANSFER (cost only; a live grant path is still required)\ncrossover L* = 13 tokens",
+      "lora": "symbol 8.19 ms; preamble 165.9 ms; payload 557.1 ms; time on air 722.9 ms for 64 bytes on air"
+    }
+  },
+  {
+    "name": "demo",
+    "width": 390,
+    "scheme": "light",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "keyChanged": true,
+      "hubPlaced": true,
+      "placeShort": "T_xfer (compressed) = 907.7 ms   T_xfer (raw) = 1362.2 ms   T_rec = 1280.0 ms\nPLACE -> TRANSFER (cost only; a live grant path is still required)\ncrossover L* = 13 tokens",
+      "lora": "symbol 8.19 ms; preamble 165.9 ms; payload 557.1 ms; time on air 722.9 ms for 64 bytes on air"
+    }
+  },
+  {
+    "name": "demo",
+    "width": 390,
+    "scheme": "dark",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "keyChanged": true,
+      "hubPlaced": true,
+      "placeShort": "T_xfer (compressed) = 907.7 ms   T_xfer (raw) = 1362.2 ms   T_rec = 1280.0 ms\nPLACE -> TRANSFER (cost only; a live grant path is still required)\ncrossover L* = 13 tokens",
+      "lora": "symbol 8.19 ms; preamble 165.9 ms; payload 557.1 ms; time on air 722.9 ms for 64 bytes on air"
+    }
+  }
+]

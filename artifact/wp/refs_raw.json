@@ -1,0 +1,719 @@
+{
+  "flexgen": {
+    "arxiv_id": "2303.06865v2",
+    "title": "FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU",
+    "authors": [
+      "Ying Sheng",
+      "Lianmin Zheng",
+      "Binhang Yuan",
+      "Zhuohan Li",
+      "Max Ryabinin",
+      "Daniel Y. Fu",
+      "Zhiqiang Xie",
+      "Beidi Chen",
+      "Clark Barrett",
+      "Joseph E. Gonzalez",
+      "Percy Liang",
+      "Christopher R\u00e9",
+      "Ion Stoica",
+      "Ce Zhang"
+    ],
+    "published": "2023-03-13T05:19:28Z",
+    "updated": "2023-06-12T07:48:53Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2303.06865",
+    "status": "resolved"
+  },
+  "flash": {
+    "arxiv_id": "2312.11514v3",
+    "title": "LLM in a flash: Efficient Large Language Model Inference with Limited Memory",
+    "authors": [
+      "Keivan Alizadeh",
+      "Iman Mirzadeh",
+      "Dmitry Belenko",
+      "Karen Khatamifard",
+      "Minsik Cho",
+      "Carlo C Del Mundo",
+      "Mohammad Rastegari",
+      "Mehrdad Farajtabar"
+    ],
+    "published": "2023-12-12T18:57:08Z",
+    "updated": "2024-07-30T23:37:20Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2312.11514",
+    "status": "resolved"
+  },
+  "petals": {
+    "arxiv_id": "2209.01188v2",
+    "title": "Petals: Collaborative Inference and Fine-tuning of Large Models",
+    "authors": [
+      "Alexander Borzunov",
+      "Dmitry Baranchuk",
+      "Tim Dettmers",
+      "Max Ryabinin",
+      "Younes Belkada",
+      "Artem Chumachenko",
+      "Pavel Samygin",
+      "Colin Raffel"
+    ],
+    "published": "2022-09-02T17:38:03Z",
+    "updated": "2023-03-02T19:33:31Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2209.01188",
+    "status": "resolved"
+  },
+  "edge0": {
+    "arxiv_id": "2609.18063v2",
+    "title": "The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction",
+    "authors": [
+      "Yu Lin",
+      "Yiming Wang",
+      "Runyuan Cai",
+      "Hanze Liu",
+      "Xiaodong Zeng"
+    ],
+    "published": "2026-09-16T03:09:04Z",
+    "updated": "2026-09-17T16:03:07Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2609.18063",
+    "status": "resolved"
+  },
+  "flashmoe": {
+    "arxiv_id": "2601.17063v2",
+    "title": "FlashMoE: Reducing SSD I/O Bottlenecks via ML-Based Cache Replacement for Mixture-of-Experts Inference on Edge Devices",
+    "authors": [
+      "Byeongju Kim",
+      "Jungwan Lee",
+      "Donghyeon Han",
+      "Hoi-Jun Yoo",
+      "Sangyeob Kim"
+    ],
+    "published": "2026-01-22T17:07:33Z",
+    "updated": "2026-10-05T08:01:11Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2601.17063",
+    "status": "resolved"
+  },
+  "tutti": {
+    "arxiv_id": "2605.03375v1",
+    "title": "Tutti: Making SSD-Backed KV Cache Practical for Long-Context LLM Serving",
+    "authors": [
+      "Shi Qiu",
+      "Yifan Hu",
+      "Xintao Wang",
+      "Wenhao Zhu",
+      "Jianqin Yan",
+      "Hao Chen",
+      "Kaiqiang Xu",
+      "Kai Chen",
+      "Yiming Zhang"
+    ],
+    "published": "2026-05-05T05:33:11Z",
+    "updated": "2026-05-05T05:33:11Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2605.03375",
+    "status": "resolved"
+  },
+  "saria": {
+    "arxiv_id": "2610.31169v1",
+    "title": "SARIA: Persistence-Aware KV Caching with Coordinated DRAM--SSD Reload for LLM Agents",
+    "authors": [
+      "Hui Li",
+      "Qihui Zhou",
+      "Xiao Yan",
+      "Shumeng Zhang",
+      "Zijie Dai",
+      "Zequn Gong",
+      "Mingcong Song",
+      "Guoping Long",
+      "Hongjie Si",
+      "James Cheng"
+    ],
+    "published": "2026-10-22T12:25:27Z",
+    "updated": "2026-10-22T12:25:27Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2610.31169",
+    "status": "resolved"
+  },
+  "kafila": {
+    "arxiv_id": "2609.34045v1",
+    "title": "Kafila: Serving Large Language Models on a Trusted Set of Heterogeneous Commodity Machines",
+    "authors": [
+      "Murtaza Rangwala",
+      "Richard O. Sinnott",
+      "Rajkumar Buyya"
+    ],
+    "published": "2026-09-28T00:10:30Z",
+    "updated": "2026-09-28T00:10:30Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2609.34045",
+    "status": "resolved"
+  },
+  "inferslice": {
+    "arxiv_id": "2610.32638v1",
+    "title": "InferSlice: A Reference Architecture for SLO-driven LLM Inference over a Telco Wide-Area Network",
+    "authors": [
+      "Juan Parra-Ullauri",
+      "Anthony Chiu",
+      "Hari Madhukumar",
+      "Zhaozhou Wu",
+      "Anderson Bravalheri",
+      "Alex Healing",
+      "Andy Corston-Petrie",
+      "Dimitra Simeonidou",
+      "Nektaria Efthymiou"
+    ],
+    "published": "2026-10-23T13:51:02Z",
+    "updated": "2026-10-23T13:51:02Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2610.32638",
+    "status": "resolved"
+  },
+  "npu": {
+    "arxiv_id": "2605.27435v1",
+    "title": "When NPUs Are Not Always Faster: A Stage-Level Analysis of Mobile LLM Inference",
+    "authors": [
+      "Pu Li",
+      "Jiawen Qi",
+      "Qinyu Chen"
+    ],
+    "published": "2026-05-22T10:39:35Z",
+    "updated": "2026-05-22T10:39:35Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2605.27435",
+    "status": "resolved"
+  },
+  "megatron": {
+    "arxiv_id": "1909.08053v4",
+    "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+    "authors": [
+      "Mohammad Shoeybi",
+      "Mostofa Patwary",
+      "Raul Puri",
+      "Patrick LeGresley",
+      "Jared Casper",
+      "Bryan Catanzaro"
+    ],
+    "published": "2019-09-17T19:42:54Z",
+    "updated": "2020-03-13T23:45:18Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/1909.08053",
+    "status": "resolved"
+  },
+  "ring": {
+    "arxiv_id": "2310.01889v4",
+    "title": "Ring Attention with Blockwise Transformers for Near-Infinite Context",
+    "authors": [
+      "Hao Liu",
+      "Matei Zaharia",
+      "Pieter Abbeel"
+    ],
+    "published": "2023-10-03T08:44:50Z",
+    "updated": "2023-11-27T06:38:47Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2310.01889",
+    "status": "resolved"
+  },
+  "deepspeedmoe": {
+    "arxiv_id": "2201.05596v2",
+    "title": "DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale",
+    "authors": [
+      "Samyam Rajbhandari",
+      "Conglong Li",
+      "Zhewei Yao",
+      "Minjia Zhang",
+      "Reza Yazdani Aminabadi",
+      "Ammar Ahmad Awan",
+      "Jeff Rasley",
+      "Yuxiong He"
+    ],
+    "published": "2022-01-14T18:36:04Z",
+    "updated": "2022-07-21T18:21:36Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2201.05596",
+    "status": "resolved"
+  },
+  "mooncake": {
+    "arxiv_id": "2407.00079v5",
+    "title": "Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving",
+    "authors": [
+      "Ruoyu Qin",
+      "Zheming Li",
+      "Weiran He",
+      "Mingxing Zhang",
+      "Yongwei Wu",
+      "Weimin Zheng",
+      "Xinran Xu"
+    ],
+    "published": "2024-06-24T02:05:32Z",
+    "updated": "2026-10-08T10:55:46Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2407.00079",
+    "status": "resolved"
+  },
+  "lmcache": {
+    "arxiv_id": "2510.09665v2",
+    "title": "LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference",
+    "authors": [
+      "Yuhan Liu",
+      "Yihua Cheng",
+      "Jiayi Yao",
+      "Yuwei An",
+      "Xiaokun Chen",
+      "Shaoting Feng",
+      "Yuyang Huang",
+      "Samuel Shen",
+      "Rui Zhang",
+      "Kuntai Du",
+      "Junchen Jiang"
+    ],
+    "published": "2025-10-08T00:15:04Z",
+    "updated": "2025-12-05T04:52:54Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.09665",
+    "status": "resolved"
+  },
+  "cacheblend": {
+    "arxiv_id": "2405.16444v3",
+    "title": "CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion",
+    "authors": [
+      "Jiayi Yao",
+      "Hanchen Li",
+      "Yuhan Liu",
+      "Siddhant Ray",
+      "Yihua Cheng",
+      "Qizheng Zhang",
+      "Kuntai Du",
+      "Shan Lu",
+      "Junchen Jiang"
+    ],
+    "published": "2024-05-26T06:00:17Z",
+    "updated": "2025-04-03T22:49:22Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.16444",
+    "status": "resolved"
+  },
+  "cachegen": {
+    "arxiv_id": "2310.07240v6",
+    "title": "CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving",
+    "authors": [
+      "Yuhan Liu",
+      "Hanchen Li",
+      "Yihua Cheng",
+      "Siddhant Ray",
+      "Yuyang Huang",
+      "Qizheng Zhang",
+      "Kuntai Du",
+      "Jiayi Yao",
+      "Shan Lu",
+      "Ganesh Ananthanarayanan",
+      "Michael Maire",
+      "Henry Hoffmann",
+      "Ari Holtzman",
+      "Junchen Jiang"
+    ],
+    "published": "2023-10-11T07:08:20Z",
+    "updated": "2024-07-19T21:04:14Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2310.07240",
+    "status": "resolved"
+  },
+  "pagedattention": {
+    "arxiv_id": "2309.06180v1",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "authors": [
+      "Woosuk Kwon",
+      "Zhuohan Li",
+      "Siyuan Zhuang",
+      "Ying Sheng",
+      "Lianmin Zheng",
+      "Cody Hao Yu",
+      "Joseph E. Gonzalez",
+      "Hao Zhang",
+      "Ion Stoica"
+    ],
+    "published": "2023-09-12T12:50:04Z",
+    "updated": "2023-09-12T12:50:04Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "status": "resolved"
+  },
+  "distserve": {
+    "arxiv_id": "2401.09670v3",
+    "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+    "authors": [
+      "Yinmin Zhong",
+      "Shengyu Liu",
+      "Junda Chen",
+      "Jianbo Hu",
+      "Yibo Zhu",
+      "Xuanzhe Liu",
+      "Xin Jin",
+      "Hao Zhang"
+    ],
+    "published": "2024-01-18T01:03:38Z",
+    "updated": "2024-06-06T15:50:51Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2401.09670",
+    "status": "resolved"
+  },
+  "sglang": {
+    "arxiv_id": "2312.07104v2",
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "authors": [
+      "Lianmin Zheng",
+      "Liangsheng Yin",
+      "Zhiqiang Xie",
+      "Chuyue Sun",
+      "Jeff Huang",
+      "Cody Hao Yu",
+      "Shiyi Cao",
+      "Christos Kozyrakis",
+      "Ion Stoica",
+      "Joseph E. Gonzalez",
+      "Clark Barrett",
+      "Ying Sheng"
+    ],
+    "published": "2023-12-12T09:34:27Z",
+    "updated": "2024-06-06T00:10:06Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2312.07104",
+    "status": "resolved"
+  },
+  "cemarouter": {
+    "arxiv_id": "2610.26171v1",
+    "title": "CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems",
+    "authors": [
+      "Xijia Wang",
+      "TianZhang He",
+      "Mohammad Goudarzi"
+    ],
+    "published": "2026-10-19T11:03:04Z",
+    "updated": "2026-10-19T11:03:04Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2610.26171",
+    "status": "resolved"
+  },
+  "prism": {
+    "arxiv_id": "2508.12851v4",
+    "title": "Accelerating Edge Inference for Distributed MoE Models with Latency-Optimized Expert Placement",
+    "authors": [
+      "Tian Wu",
+      "Liming Wang",
+      "Zijian Wen",
+      "Xiaoxi Zhang",
+      "Xu Chen",
+      "Jingpu Duan",
+      "Xianwei Zhang",
+      "Jinhang Zuo"
+    ],
+    "published": "2025-08-18T11:41:17Z",
+    "updated": "2026-04-15T14:22:25Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2508.12851",
+    "status": "resolved"
+  },
+  "meshattention": {
+    "arxiv_id": "2512.20968v2",
+    "title": "Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality",
+    "authors": [
+      "Sirui Chen",
+      "Jingji Chen",
+      "Siqi Zhu",
+      "Ziheng Jiang",
+      "Yanghua Peng",
+      "Xuehai Qian"
+    ],
+    "published": "2025-12-24T05:48:58Z",
+    "updated": "2026-08-09T04:14:47Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2512.20968",
+    "status": "resolved"
+  },
+  "bloombee": {
+    "arxiv_id": "2604.21072v2",
+    "title": "Distributed Generative Inference of LLM at Internet Scales with Multi-Dimensional Communication Optimization",
+    "authors": [
+      "Jiu Chen",
+      "Shuangyan Yang",
+      "Xu Xiong",
+      "Hexiao Duan",
+      "Xinran Zhang",
+      "Jie Ren",
+      "Dong Li"
+    ],
+    "published": "2026-04-22T20:36:47Z",
+    "updated": "2026-05-05T16:09:43Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2604.21072",
+    "status": "resolved"
+  },
+  "easybalance": {
+    "arxiv_id": "2608.07964v1",
+    "title": "EasyBalance: Cross-Layer Load Balancing in Distributed MoE Inference",
+    "authors": [
+      "Yize Wu",
+      "Ke Gao",
+      "Ling Li",
+      "Yanjun Wu"
+    ],
+    "published": "2026-08-08T06:59:09Z",
+    "updated": "2026-08-08T06:59:09Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2608.07964",
+    "status": "resolved"
+  },
+  "batteryprice": {
+    "arxiv_id": "2609.11940v1",
+    "title": "The Battery Price of edge AI: A study of the Environmental Impact of LLM Inference on Mobile Devices",
+    "authors": [
+      "\u00c9douard Gu\u00e9gain",
+      "Tristan Coignion"
+    ],
+    "published": "2026-07-10T07:48:12Z",
+    "updated": "2026-07-10T07:48:12Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2609.11940",
+    "status": "resolved"
+  },
+  "primacpp": {
+    "arxiv_id": "2504.08791v3",
+    "title": "Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters",
+    "authors": [
+      "Zonghang Li",
+      "Tao Li",
+      "Wenjiao Feng",
+      "Rongxing Xiao",
+      "Jianshu She",
+      "Hong Huang",
+      "Mohsen Guizani",
+      "Hongfang Yu",
+      "Qirong Ho",
+      "Wei Xiang",
+      "Xue Liu"
+    ],
+    "published": "2025-04-07T13:46:21Z",
+    "updated": "2026-07-04T08:07:08Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2504.08791",
+    "status": "resolved"
+  },
+  "edgeshard": {
+    "arxiv_id": "2405.14371v1",
+    "title": "EdgeShard: Efficient LLM Inference via Collaborative Edge Computing",
+    "authors": [
+      "Mingjin Zhang",
+      "Jiannong Cao",
+      "Xiaoming Shen",
+      "Zeyang Cui"
+    ],
+    "published": "2024-05-23T09:46:22Z",
+    "updated": "2024-05-23T09:46:22Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.14371",
+    "status": "resolved"
+  },
+  "petalsinternet": {
+    "arxiv_id": "2312.08361v1",
+    "title": "Distributed Inference and Fine-tuning of Large Language Models Over The Internet",
+    "authors": [
+      "Alexander Borzunov",
+      "Max Ryabinin",
+      "Artem Chumachenko",
+      "Dmitry Baranchuk",
+      "Tim Dettmers",
+      "Younes Belkada",
+      "Pavel Samygin",
+      "Colin Raffel"
+    ],
+    "published": "2023-12-13T18:52:49Z",
+    "updated": "2023-12-13T18:52:49Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2312.08361",
+    "status": "resolved"
+  },
+  "tpillm": {
+    "arxiv_id": "2410.00531v1",
+    "title": "TPI-LLM: Serving 70B-scale LLMs Efficiently on Low-resource Edge Devices",
+    "authors": [
+      "Zonghang Li",
+      "Wenjiao Feng",
+      "Mohsen Guizani",
+      "Hongfang Yu"
+    ],
+    "published": "2024-10-01T09:18:56Z",
+    "updated": "2024-10-01T09:18:56Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.00531",
+    "status": "resolved"
+  },
+  "lingualinked": {
+    "arxiv_id": "2312.00388v1",
+    "title": "LinguaLinked: A Distributed Large Language Model Inference System for Mobile Devices",
+    "authors": [
+      "Junchen Zhao",
+      "Yurun Song",
+      "Simeng Liu",
+      "Ian G. Harris",
+      "Sangeetha Abdu Jyothi"
+    ],
+    "published": "2023-12-01T07:19:42Z",
+    "updated": "2023-12-01T07:19:42Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2312.00388",
+    "status": "resolved"
+  },
+  "galaxy": {
+    "arxiv_id": "2405.17245v1",
+    "title": "Galaxy: A Resource-Efficient Collaborative Edge AI System for In-situ Transformer Inference",
+    "authors": [
+      "Shengyuan Ye",
+      "Jiangsu Du",
+      "Liekang Zeng",
+      "Wenzhong Ou",
+      "Xiaowen Chu",
+      "Yutong Lu",
+      "Xu Chen"
+    ],
+    "published": "2024-05-27T15:01:04Z",
+    "updated": "2024-05-27T15:01:04Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.17245",
+    "status": "resolved"
+  },
+  "hexgen": {
+    "arxiv_id": "2311.11514v3",
+    "title": "HexGen: Generative Inference of Large Language Model over Heterogeneous Environment",
+    "authors": [
+      "Youhe Jiang",
+      "Ran Yan",
+      "Xiaozhe Yao",
+      "Yang Zhou",
+      "Beidi Chen",
+      "Binhang Yuan"
+    ],
+    "published": "2023-11-20T03:28:57Z",
+    "updated": "2024-05-27T15:55:22Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2311.11514",
+    "status": "resolved"
+  },
+  "gaac": {
+    "arxiv_id": "2610.38210v1",
+    "title": "GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices",
+    "authors": [
+      "Yipin Guo",
+      "Arun M George",
+      "Siddharth Joshi"
+    ],
+    "published": "2026-10-28T03:03:51Z",
+    "updated": "2026-10-28T03:03:51Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2610.38210",
+    "status": "resolved"
+  },
+  "splitzip": {
+    "arxiv_id": "2605.01708v3",
+    "title": "SplitZip: Ultra Fast Lossless KV Compression for Disaggregated LLM Serving",
+    "authors": [
+      "Yipin Guo",
+      "Siddharth Joshi"
+    ],
+    "published": "2026-05-03T04:22:51Z",
+    "updated": "2026-06-23T19:13:16Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2605.01708",
+    "status": "resolved"
+  },
+  "qwen25": {
+    "arxiv_id": "2412.15115v2",
+    "title": "Qwen2.5 Technical Report",
+    "authors": [
+      "Qwen",
+      ":",
+      "An Yang",
+      "Baosong Yang",
+      "Beichen Zhang",
+      "Binyuan Hui",
+      "Bo Zheng",
+      "Bowen Yu",
+      "Chengyuan Li",
+      "Dayiheng Liu",
+      "Fei Huang",
+      "Haoran Wei",
+      "Huan Lin",
+      "Jian Yang",
+      "Jianhong Tu",
+      "Jianwei Zhang",
+      "Jianxin Yang",
+      "Jiaxi Yang",
+      "Jingren Zhou",
+      "Junyang Lin",
+      "Kai Dang",
+      "Keming Lu",
+      "Keqin Bao",
+      "Kexin Yang",
+      "Le Yu",
+      "Mei Li",
+      "Mingfeng Xue",
+      "Pei Zhang",
+      "Qin Zhu",
+      "Rui Men",
+      "Runji Lin",
+      "Tianhao Li",
+      "Tianyi Tang",
+      "Tingyu Xia",
+      "Xingzhang Ren",
+      "Xuancheng Ren",
+      "Yang Fan",
+      "Yang Su",
+      "Yichang Zhang",
+      "Yu Wan",
+      "Yuqiong Liu",
+      "Zeyu Cui",
+      "Zhenru Zhang",
+      "Zihan Qiu"
+    ],
+    "published": "2024-12-19T17:56:09Z",
+    "updated": "2025-01-03T02:18:21Z",
+    "journal_ref": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2412.15115",
+    "status": "resolved"
+  }
+}

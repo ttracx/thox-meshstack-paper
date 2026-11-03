@@ -1,0 +1,17 @@
+# Paper build intermediates (produced by artifact/wp build; not sources)
+artifact/wp/node_modules/
+artifact/wp/paper.src.html
+artifact/wp/paper.html
+artifact/wp/cover.pdf
+artifact/wp/body.pdf
+artifact/dist/
+
+# Python / Node
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+
+# OS / editor
+.DS_Store
+*.swp
