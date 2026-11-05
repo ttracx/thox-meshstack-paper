@@ -57,3 +57,20 @@ anonymous download, byte-identical.
 2026-11-03, by the GitHub DOI patch lane: DOI added to README,
 CITATION.cff, and the v1.0.1 release notes from the live Zenodo
 record.
+
+## v1.1.0 evidence edition published (2026-11-04)
+
+- Zenodo new version of record 23919580: DOI 10.5281/zenodo.23969070
+  (concept DOI 10.5281/zenodo.23919579), version field 1.1.0, CC BY
+  4.0, both authors with ORCIDs. Served PDF SHA-256 verified against
+  the pack: 7349a6bc6a1ea89cdcd89aad87385fd5155bf645060d064dbdad85e30d4afbaf.
+- The carried-over record description was corrected in the same pass:
+  the KV codec figure now reads 1.17x to 1.20x (the 1.51x sentence was
+  the v1.0.1 text; the paper restates it in Section 6.1).
+- GitHub: v1.1.0 trio added under paper/, README + CITATION.cff
+  updated to the v1.1.0 version DOI, release v1.1.0 cut with the trio
+  plus the artifact ZIP (SHA-256
+  9245eff36e33f741c90f56eba11773cff79dc174250b3d933d4ade872e65ceea).
+- Publication proceeded on Tommy's global paper approval of
+  2026-11-04, which covers all THOX papers; per-paper consent is no
+  longer a gate.

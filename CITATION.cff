@@ -12,14 +12,11 @@ authors:
     affiliation: "THOX.ai LLC"
 institution:
   name: "THOX.ai Research, THOX.ai LLC"
-version: "1.0.1"
-date-released: "2026-11-03"
-url: "https://huggingface.co/datasets/Thox-ai/thox-whitepapers/resolve/main/meshstack/THOX_MeshStack_Research_Paper_v1.0.1.pdf"
-doi: "10.5281/zenodo.23919580"
+version: "1.1.0"
+date-released: "2026-11-04"
+doi: "10.5281/zenodo.23969070"
+url: "https://doi.org/10.5281/zenodo.23969070"
 license: CC-BY-4.0
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.23919580"
 abstract: >-
   MeshStack is the distributed-inference layer for the THOX device
   family: a private household mesh of small computers that pool memory
@@ -29,18 +26,25 @@ abstract: >-
   design into one priced, grant-gated, lease-fenced system. Pipeline
   stage placement is priced against each node's storage and RAM floors;
   KV cache moves between nodes only under an explicit grant; device
-  roles are held under epoch-bearing leases so a departed holder cannot
-  act on a stale authorisation. Evidence is classed measured (general
-  host), calculated (public device floors), or simulated (protocol
-  logic); no engine throughput, cross-host transfer, or physical-device
-  measurement is claimed. Headline results: lossless KV compression
-  1.512x on the byte-split proxy at 121.9 MB/s encode; HMAC chunk keying
-  9.67 microseconds per 64-token chunk; at public floors an Air+Mini+Clip
-  trio cannot place the 27.8B reference model (12 GB trio floor vs
-  14.6 GiB Q4 weights) and is returned Unplaceable; under churn
-  simulation, epoch fencing rejects all stale completions and live
-  grant evaluation authorises zero accesses after a grant-path node
-  departs.
+  roles are held under lease fencing so a departed holder cannot act on
+  a stale authorisation. Evidence is classed measured (named general
+  host classes), calculated (public device floors), or simulated
+  (protocol logic); no THOX device measurement is claimed. Edition
+  v1.1.0 (evidence edition) headline results: lossless compression of
+  real GGUF KV (f16) is 1.17 to 1.20x with the byte-split zstd codec,
+  bit-exact (the v1.0.1 figure of 1.512x was a bfloat16-tensor result
+  and is restated); HMAC chunk keying 9.67 microseconds per 64-token
+  chunk; the measured 27B state geometry is 65,536 B/token of attention
+  KV plus a fixed 156,894,356 B recurrent state per sequence, and at
+  public floors an Air+Mini+Clip trio still cannot place the 27.8B
+  reference model (12 GB trio floor vs 14.6 GiB Q4 weights) and is
+  returned Unplaceable; the measured PLACE transfer overhead is
+  a = 0.196 s with crossovers at 13.2 tokens (P50) and 40.8 (P100) and
+  none at P200 or above, and the 65536-token transfer was not
+  completed; a live fencing drill on the deployed coordinator accepted
+  zero stale authorisations after a lease re-grant (15 to 16); a
+  two-host llama.cpp split generated 2.3 tok/s at n = 1 with transport
+  caveats stated, and the 27B split was not achieved.
 keywords:
   - MeshStack
   - ThoxOS
@@ -53,7 +57,8 @@ keywords:
   - LoRa
 notes: >-
   Preprint, not peer reviewed. THOX.ai Research technical report
-  v1.0.1 (public edition), 3 November 2026. Zenodo DOI:
-  10.5281/zenodo.23919580. No arXiv identifier has been issued for
-  this paper. PDF SHA-256:
-  d071cf7102994cd698201e384672012b442d5fda26302a77f8690d4ad025d0ff.
+  v1.1.0 (evidence edition), 3 November 2026. The DOI above is the
+  Zenodo concept DOI for the paper (all versions); the v1.1.0 version
+  DOI is 10.5281/zenodo.23969070 (deposited 2026-11-04). The v1.0.1
+  version DOI is 10.5281/zenodo.23919580. PDF SHA-256:
+  7349a6bc6a1ea89cdcd89aad87385fd5155bf645060d064dbdad85e30d4afbaf.

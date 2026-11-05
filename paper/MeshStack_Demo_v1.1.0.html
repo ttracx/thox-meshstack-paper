@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MeshStack Mechanisms Demo</title>
+<meta name="description" content="Runs the real MeshStack mechanisms in the browser: parent-chained HMAC chunk keying with known-answer tests, two-domain shard admission, the PLACE crossover and LoRa control-plane airtime, with the paper's measured data embedded.">
+<style>
+:root{--bg:#FFFFFF;--fg:#111827;--muted:#6B7280;--rule:#E5E7EB;--card:#F9FAFB;--green:#047C3D;--green-ink:#047C3D;--pale:#E6F4EC;--bad:#B91C1C;--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;--sans:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0F14;--fg:#F3F4F6;--muted:#9CA3AF;--rule:#1F2937;--card:#111827;--green:#05A451;--green-ink:#05A451;--pale:#0F2A1B;--bad:#F87171}}
+:root[data-theme="dark"]{--bg:#0B0F14;--fg:#F3F4F6;--muted:#9CA3AF;--rule:#1F2937;--card:#111827;--green:#05A451;--green-ink:#05A451;--pale:#0F2A1B;--bad:#F87171}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5;font-size:15px}
+.wrap{max-width:960px;margin:0 auto;padding:24px 16px 48px}
+header{border-bottom:2px solid var(--green);padding-bottom:10px;margin-bottom:18px}
+.eyebrow{font-family:var(--mono);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:24px;margin:6px 0 4px;line-height:1.2}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--rule);padding-bottom:4px}
+p{margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:14px 14px;margin:10px 0}
+label{display:block;font-size:13px;color:var(--muted);margin:8px 0 2px}
+input,select,textarea{width:100%;max-width:100%;font-family:var(--mono);font-size:13px;padding:7px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--fg)}
+textarea{min-height:70px}
+button{font-family:var(--sans);font-size:14px;font-weight:600;background:var(--green);color:#fff;border:0;border-radius:6px;padding:8px 14px;margin:10px 6px 0 0;cursor:pointer}
+button.secondary{background:transparent;color:var(--green-ink);border:1px solid var(--green)}
+pre,.out{font-family:var(--mono);font-size:12.5px;white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:10px;margin:8px 0 0;overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.ok{color:var(--green-ink);font-weight:600}.bad{color:var(--bad);font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}
+.kpi{border:1px solid var(--rule);border-top:3px solid var(--green);border-radius:6px;padding:10px;background:var(--card)}
+.kv{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--green-ink)}
+.kl{font-size:12px;color:var(--muted);margin-top:3px}
+.kt{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--rule)}
+th{color:var(--muted);font-weight:600}
+.note{font-size:13px;color:var(--muted)}
+footer{margin-top:30px;font-size:12px;color:var(--muted);border-top:1px solid var(--rule);padding-top:10px}
+.theme{float:right;font-size:12px;background:transparent;color:var(--muted);border:1px solid var(--rule);padding:4px 8px;margin:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <button class="theme" id="themeBtn" type="button">Theme: auto</button>
+  <div class="eyebrow">THOX.ai Research &middot; companion demo to technical report v1.1.0</div>
+  <h1>MeshStack mechanisms, running in your browser</h1>
+  <p class="note">Everything below executes the real logic client-side in plain JavaScript (SHA-256 and HMAC implemented here and checked against known-answer vectors on load). The embedded numbers are the paper's measured and calculated outputs. What is measured: lossless codec ratios on real GGUF KV (Azure VM CPU host class) and on the 0.5B harness, keying cost, the cross-host transfer overhead, a two-host engine split, and a live fencing drill, each labelled in the paper with its host class. What is not claimed: any THOX device measurement.</p>
+</header>
+
+<h2>Measured and calculated results (from summary.json)</h2>
+<div class="kpis" id="kpis"></div>
+
+<h2>1. Parent-chained HMAC-SHA256 chunk keys</h2>
+<div class="card">
+  <p class="note">key_i = HMAC_K( "thox.kv.chunk/v1" || key_{i-1} || fingerprint || tokens_i as uint32 big-endian || len(extra) || extra ). Edit the chunks and watch the keys: the first differing chunk changes its key and every key after it (Propositions 1 and 2).</p>
+  <div class="grid">
+    <div><label>Keying secret (hex, 32 bytes)</label><input id="kSecret" value="000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f"></div>
+    <div><label>Model fingerprint (hex, 32 bytes)</label><input id="kFp" value="abababababababababababababababababababababababababababababababab"></div>
+  </div>
+  <label>Chunks: one per line, tokens as integers</label>
+  <textarea id="kChunks">1 2 3 4
+5 6</textarea>
+  <button type="button" id="kRun">Compute chain</button>
+  <button type="button" class="secondary" id="kDiverge">Flip one token in chunk 1</button>
+  <div class="out" id="kOut">Known-answer tests: <span id="kat">running</span></div>
+</div>
+
+<h2>2. Two-domain shard admission</h2>
+<div class="card">
+  <p class="note">Weights plus KV reserve admit against usable RAM; priced workspace admits against the system budget. First-fit contiguous, anchor first; no partial admission. Floors: Air 2 GB, Mini 4 GB, Clip 6 GB (ThoxOS whitepaper v0.1.0). The default model is the 27.8B Q4 demo geometry; try the 2.49 GB Phi-4-mini file.</p>
+  <div class="grid">
+    <div><label>Model</label><select id="aModel"><option value="demo27b">27.8B / 64 layers Q4 (14.6 GiB, 16 attn layers x 4 KV heads x 256)</option><option value="phi4">Phi-4-mini Q4_K_M (2.49 GB file, 32 layers, 8 KV heads x 128)</option><option value="qwen05">Qwen2.5-0.5B bf16 (real geometry)</option></select></div>
+    <div><label>Context tokens</label><input id="aCtx" type="number" value="2048"></div>
+    <div><label>Usable fraction of floor</label><input id="aFrac" type="number" step="0.05" value="0.8"></div>
+    <div><label>Workspace per stage (MiB)</label><input id="aWs" type="number" value="256"></div>
+  </div>
+  <label>Nodes in order (anchor first): class or GB per line, e.g. Mini, Clip, Air, 16</label>
+  <textarea id="aNodes">Mini
+Clip
+Air</textarea>
+  <button type="button" id="aRun">Plan</button>
+  <button type="button" class="secondary" id="aHub">Add a 16 GB hub</button>
+  <div class="out" id="aOut"></div>
+</div>
+
+<h2>3. PLACE: transfer or recompute</h2>
+<div class="card">
+  <p class="note">T_xfer = L k / (r B) + a; T_rec = L / P. The lossless ratio r defaults to the paper's measured real-GGUF 27B value and the overhead a to the measured 0.196 s (v1.1.0, Section 6.4). Link and prefill rates are inputs, not measurements.</p>
+  <div class="grid">
+    <div><label>KV bytes per token</label><input id="pK" type="number" value="65536"></div>
+    <div><label>Lossless ratio r</label><input id="pR" type="number" step="0.01"></div>
+    <div><label>Link payload rate (Mb/s)</label><input id="pB" type="number" value="100"></div>
+    <div><label>Overhead a (ms)</label><input id="pA" type="number" value="196"></div>
+    <div><label>Prefill rate P (tok/s)</label><input id="pP" type="number" value="200"></div>
+    <div><label>Prefix L (tokens)</label><input id="pL" type="number" value="4096"></div>
+  </div>
+  <button type="button" id="pRun">Decide</button>
+  <div class="out" id="pOut"></div>
+</div>
+
+<h2>4. LoRa control-plane airtime (MeshLink)</h2>
+<div class="card">
+  <p class="note">Standard LoRa time-on-air formula with a 16-symbol preamble and the 16-byte Meshtastic header. Presets from the Meshtastic radio settings table. Payload ceiling 239 bytes.</p>
+  <div class="grid">
+    <div><label>Preset</label><select id="lPreset"></select></div>
+    <div><label>Payload bytes (max 239)</label><input id="lBytes" type="number" value="48"></div>
+    <div><label>Duty cycle (%)</label><input id="lDuty" type="number" value="10"></div>
+    <div><label>Heartbeat interval (s)</label><input id="lInt" type="number" value="20"></div>
+  </div>
+  <button type="button" id="lRun">Compute</button>
+  <div class="out" id="lOut"></div>
+</div>
+
+<footer>Your AI. Your Data. Your Rules.&trade; &middot; THOX&reg;, ThoxOS&trade; and MeshStack&trade; are marks of THOX.ai LLC. Preprint companion; not peer reviewed. No network calls are made by this page.</footer>
+</div>
+
+<script id="summary" type="application/json">{"compression": {"kpi_ratio_bytesplit_zstd3_kv2048": 1.5123615962515573, "kpi_ratio_raw_zstd3_kv2048": 1.3061566153252075, "kpi_best_ratio_kv2048": {"codec": "bytesplit-lzma", "ratio": 1.6919734306006353}, "kpi_enc_MBps_bytesplit_zstd3_kv2048": 121.91104441154499, "kpi_dec_MBps_bytesplit_zstd3_kv2048": 364.6943279041434, "kpi_hi_plane_ratio_kv2048": 5.805038742434262, "kpi_control_gaussian_ratio": 1.412470553212335, "kpi_act_ratio_bytesplit_zstd3_2048": 1.4276162802005656}, "keying": {"known_answer": {"secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f", "fingerprint_hex": "abababababababababababababababababababababababababababababababab", "chunks": [[1, 2, 3, 4], [5, 6]], "keys_hex": ["57583d1c59f44e361985646b98a63933e762bdb19f1734f866873953cb85ecb2", "51be4cd6edb0062c897751ab9e65f3a53626788d8f4d0b5edb3e8c532caefa14"]}, "kpi_us_per_64_token_chunk": 9.667999961493479}, "admission": {"models": {"qwen05b": {"name": "Qwen2.5-0.5B-Instruct bf16 (real geometry)", "layers": 24, "total_weight_bytes": 988065536, "kv_bytes_per_token": 12288, "source": "model.safetensors of Qwen/Qwen2.5-0.5B-Instruct, parameter counts per tensor"}, "phi4mini": {"name": "ThoxMini-Phi4Mini Q4_K_M (published file size, uniform per-layer split)", "layers": 32, "total_weight_bytes": 2493840576.0, "kv_bytes_per_token": 131072, "source": "published GGUF size 2,493,840,576 B; Phi-4-mini public geometry; uniform split is an assumption"}, "demo27b": {"name": "27.8B/64-layer Q4 demo geometry (MeshStack v2 design paper record)", "layers": 64, "total_weight_bytes": 15676630630.4, "kv_bytes_per_token": 65536.0, "source": "14.6 GiB total weights, 64 layers, 16 attention layers x 4 KV heads x 256 head_dim, bf16 KV; SSM state not priced"}}, "kpi_trio_27b_at_floors": {"0.5": "Unplaceable", "0.65": "Unplaceable", "0.8": "Unplaceable"}}, "churn": {"kpi_sessions_median": 355.5, "kpi_replans_median": 16.5, "kpi_stale_unfenced_median": 3.0, "kpi_stale_fenced_rejected_median": 3.0, "kpi_stale_auth_cached30_median": 105.0, "kpi_stale_auth_cached300_median": 288.5, "kpi_stale_auth_live_median": 0.0, "kpi_max_stale_auth_per_session_cache30": 14.0, "kpi_max_stale_auth_per_session_cache300": 50.5, "kpi_fail_closed_live_median": 17.5, "kpi_detect_latency_ttl20": 17.647103476467237, "kpi_detect_latency_ttl60": 57.56577504139352, "kpi_detect_latency_ttl10": 7.464158185375936}, "lora": {"presets": {"ShortTurbo": {"bandwidth_hz": 500000.0, "sf": 7, "cr": "4/5"}, "ShortFast": {"bandwidth_hz": 250000.0, "sf": 7, "cr": "4/5"}, "ShortSlow": {"bandwidth_hz": 250000.0, "sf": 8, "cr": "4/5"}, "MediumTurbo": {"bandwidth_hz": 500000.0, "sf": 9, "cr": "4/5"}, "MediumFast": {"bandwidth_hz": 250000.0, "sf": 9, "cr": "4/5"}, "MediumSlow": {"bandwidth_hz": 250000.0, "sf": 10, "cr": "4/5"}, "LongTurbo": {"bandwidth_hz": 500000.0, "sf": 11, "cr": "4/8"}, "LongFast": {"bandwidth_hz": 250000.0, "sf": 11, "cr": "4/5"}, "LongModerate": {"bandwidth_hz": 125000.0, "sf": 11, "cr": "4/8"}}, "kpi_longfast_heartbeat_ms": 722.9440000000001}, "vlab_codec": {"kpi_real_gguf_ratio_min": 1.1685939593309185, "kpi_real_gguf_ratio_max": 1.1947101968021014, "kpi_real_gguf_ratio_max_any_level": 1.195885130357428, "kpi_real_gguf_27b_ratio_2048": 1.1708997301511122, "kpi_enc_MBps_min": 422.2442568490835, "kpi_enc_MBps_max": 935.2322197821156}, "vlab_transfer": {"overhead": {"paper_assumed_a_seconds": 0.02, "measured_a_seconds_median": 0.196114, "reps": 7, "structure": "connect + grant wait + completion return, about 3 round trips at the measured ~62 ms RTT"}}}</script>
+<script>
+"use strict";
+// ---------- SHA-256 and HMAC (pure JS, FIPS 180-4 / RFC 2104) ----------
+const K256 = new Uint32Array([0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2]);
+function sha256(bytes){
+  const l=bytes.length; const bitLen=l*8;
+  const padLen=((l+9+63)>>6)<<6; const m=new Uint8Array(padLen); m.set(bytes); m[l]=0x80;
+  const dv=new DataView(m.buffer); dv.setUint32(padLen-8, Math.floor(bitLen/4294967296)); dv.setUint32(padLen-4, bitLen>>>0);
+  let h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+  const w=new Uint32Array(64);
+  for(let i=0;i<padLen;i+=64){
+    for(let t=0;t<16;t++) w[t]=dv.getUint32(i+t*4);
+    for(let t=16;t<64;t++){const s0=((w[t-15]>>>7)|(w[t-15]<<25))^((w[t-15]>>>18)|(w[t-15]<<14))^(w[t-15]>>>3);const s1=((w[t-2]>>>17)|(w[t-2]<<15))^((w[t-2]>>>19)|(w[t-2]<<13))^(w[t-2]>>>10);w[t]=(w[t-16]+s0+w[t-7]+s1)>>>0;}
+    let a=h0,b=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+    for(let t=0;t<64;t++){const S1=((e>>>6)|(e<<26))^((e>>>11)|(e<<21))^((e>>>25)|(e<<7));const ch=(e&f)^(~e&g);const t1=(h+S1+ch+K256[t]+w[t])>>>0;const S0=((a>>>2)|(a<<30))^((a>>>13)|(a<<19))^((a>>>22)|(a<<10));const maj=(a&b)^(a&c)^(b&c);const t2=(S0+maj)>>>0;h=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;}
+    h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;h5=(h5+f)>>>0;h6=(h6+g)>>>0;h7=(h7+h)>>>0;
+  }
+  const out=new Uint8Array(32); const ov=new DataView(out.buffer);
+  [h0,h1,h2,h3,h4,h5,h6,h7].forEach((v,i)=>ov.setUint32(i*4,v)); return out;
+}
+function hmac(key,msg){
+  if(key.length>64) key=sha256(key);
+  const k=new Uint8Array(64); k.set(key);
+  const ipad=new Uint8Array(64+msg.length), opad=new Uint8Array(64+32);
+  for(let i=0;i<64;i++){ipad[i]=k[i]^0x36;opad[i]=k[i]^0x5c;}
+  ipad.set(msg,64); opad.set(sha256(ipad),64); return sha256(opad);
+}
+const hex=b=>Array.from(b,x=>x.toString(16).padStart(2,"0")).join("");
+const unhex=s=>{s=s.trim(); if(!/^[0-9a-fA-F]*$/.test(s)||s.length%2) throw new Error("bad hex"); return new Uint8Array(s.match(/../g).map(h=>parseInt(h,16)));};
+const utf8=s=>new TextEncoder().encode(s);
+function concat(...arrs){const n=arrs.reduce((a,b)=>a+b.length,0);const o=new Uint8Array(n);let p=0;for(const a of arrs){o.set(a,p);p+=a.length;}return o;}
+function u32be(nums){const o=new Uint8Array(nums.length*4);const v=new DataView(o.buffer);nums.forEach((n,i)=>v.setUint32(i*4,n>>>0));return o;}
+function lp(x){const o=new Uint8Array(4+x.length);new DataView(o.buffer).setUint32(0,x.length);o.set(x,4);return o;}
+const DOMAIN=utf8("thox.kv.chunk/v1");
+function chunkKey(secret,parent,fp,tokens,extra){
+  if(fp.length!==32) throw new Error("fingerprint must be 32 bytes");
+  if(!tokens.length) throw new Error("a chunk must carry at least one token");
+  return hmac(secret, concat(DOMAIN, parent||new Uint8Array(32), fp, u32be(tokens), lp(extra||new Uint8Array(0))));
+}
+function chain(secret,fp,chunks){const keys=[];let parent=null;for(const c of chunks){parent=chunkKey(secret,parent,fp,c);keys.push(parent);}return keys;}
+
+// ---------- known-answer tests ----------
+const S=JSON.parse(document.getElementById("summary").textContent);
+function kat(){
+  const results=[];
+  // FIPS 180-4 example: SHA-256("abc")
+  results.push(["SHA-256('abc')", hex(sha256(utf8("abc")))==="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"]);
+  // RFC 4231 test case 2: key "Jefe", data "what do ya want for nothing?"
+  results.push(["HMAC-SHA256 RFC 4231 #2", hex(hmac(utf8("Jefe"),utf8("what do ya want for nothing?")))==="5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843"]);
+  // RFC 4231 test case 1: 20 bytes of 0x0b, "Hi There"
+  results.push(["HMAC-SHA256 RFC 4231 #1", hex(hmac(new Uint8Array(20).fill(0x0b),utf8("Hi There")))==="b0344c61d8db38535ca8afceaf0bf12b881dc200c9833da726e9376c2e32cff7"]);
+  // paper's keying known-answer vector (exp/keying_experiments.py)
+  const ka=S.keying.known_answer;
+  const keys=chain(unhex(ka.secret_hex),unhex(ka.fingerprint_hex),ka.chunks);
+  results.push(["chunk-key vector (paper)", keys.every((k,i)=>hex(k)===ka.keys_hex[i])]);
+  const all=results.every(r=>r[1]);
+  document.getElementById("kat").innerHTML=results.map(r=>`${r[0]}: <span class="${r[1]?'ok':'bad'}">${r[1]?'pass':'FAIL'}</span>`).join(" &middot; ")+(all?"":" (do not trust outputs)");
+  return all;
+}
+
+// ---------- keying UI ----------
+function parseChunks(txt){return txt.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>l.split(/[\s,]+/).map(Number).filter(n=>Number.isInteger(n)&&n>=0));}
+function runKeys(){
+  try{
+    const secret=unhex(document.getElementById("kSecret").value), fp=unhex(document.getElementById("kFp").value);
+    const chunks=parseChunks(document.getElementById("kChunks").value);
+    const keys=chain(secret,fp,chunks);
+    const prev=window.__prevKeys||[];
+    const lines=keys.map((k,i)=>`key_${i} = ${hex(k)}`+(prev[i]&&prev[i]!==hex(k)?"   <- changed":""));
+    window.__prevKeys=keys.map(hex);
+    document.getElementById("kOut").innerHTML=`Known-answer tests: <span id="kat"></span>\n`+lines.join("\n");
+    kat();
+  }catch(e){document.getElementById("kOut").textContent="Error: "+e.message;}
+}
+document.getElementById("kRun").onclick=runKeys;
+document.getElementById("kDiverge").onclick=()=>{const ta=document.getElementById("kChunks");const lines=ta.value.split("\n");if(lines.length>1){const t=lines[1].trim().split(/[\s,]+/).map(Number);t[0]=(t[0]||0)+1;lines[1]=t.join(" ");ta.value=lines.join("\n");}runKeys();};
+
+// ---------- admission ----------
+const GB=1e9, GiB=1024**3, MiB=1024**2;
+const FLOORS={air:2*GB,mini:4*GB,clip:6*GB};
+const MODELS={
+  demo27b:{layers:64,layerW:Array(64).fill(14.6*GiB/64),embed:0,head:0,kv:Array.from({length:64},(_,i)=>i%4===0?2*4*256*2:0)},
+  phi4:{layers:32,layerW:Array(32).fill(2493840576*0.92/32),embed:2493840576*0.04,head:2493840576*0.04,kv:Array(32).fill(2*8*128*2)},
+  qwen05:{layers:24,layerW:Array(24).fill(S.admission.models.qwen05b.total_weight_bytes*0.72/24),embed:S.admission.models.qwen05b.total_weight_bytes*0.14,head:S.admission.models.qwen05b.total_weight_bytes*0.14,kv:Array(24).fill(2*2*64*2)}
+};
+function plan(m,nodes,T,ws){
+  let l=0;const stages=[];
+  for(const n of nodes){
+    if(l>=m.layers)break; if(ws>n.sys)continue;
+    const start=l;let W=start===0?m.embed:0,K=0;
+    while(l<m.layers){const lw=m.layerW[l],tail=l===m.layers-1?m.head:0,lkv=m.kv[l]*T; if(W+lw+tail+K+lkv<=n.ram){W+=lw+tail;K+=lkv;l++;}else break;}
+    if(l>start)stages.push({node:n.name,start,end:l-1,W,K,ws});
+  }
+  return {placed:l>=m.layers,layers:l,total:m.layers,stages:l>=m.layers?stages:[]};
+}
+function parseNodes(txt,frac){return txt.split("\n").map(s=>s.trim()).filter(Boolean).map((s,i)=>{const k=s.toLowerCase();const floor=FLOORS[k]||(parseFloat(s)*GB);if(!floor||!isFinite(floor))throw new Error("unknown node: "+s);return {name:`${s}-${i}`,ram:floor*frac,sys:floor*0.25};});}
+function runPlan(){
+  try{
+    const m=MODELS[document.getElementById("aModel").value];const T=+document.getElementById("aCtx").value;const frac=+document.getElementById("aFrac").value;const ws=+document.getElementById("aWs").value*MiB;
+    if(!(T>0&&frac>0&&frac<=1))throw new Error("context must be positive and fraction in (0,1]");
+    const nodes=parseNodes(document.getElementById("aNodes").value,frac);const r=plan(m,nodes,T,ws);
+    const totW=m.layerW.reduce((a,b)=>a+b,0)+m.embed+m.head;const totR=nodes.reduce((a,n)=>a+n.ram,0);
+    let out=`weights ${(totW/GiB).toFixed(2)} GiB; aggregate usable RAM ${(totR/GiB).toFixed(2)} GiB; context ${T}\n`;
+    if(r.placed){out+=`<span class="ok">placed</span> in ${r.stages.length} stage(s)\n`+r.stages.map(s=>`  ${s.node.padEnd(10)} layers ${s.start}-${s.end}  weights ${(s.W/GiB).toFixed(2)} GiB  KV ${(s.K/MiB).toFixed(0)} MiB  workspace ${(s.ws/MiB).toFixed(0)} MiB`).join("\n");}
+    else out+=`<span class="bad">Unplaceable</span>: ${r.layers}/${r.total} layers admit; no partial plan is emitted (R1, R8)`;
+    document.getElementById("aOut").innerHTML=out;
+  }catch(e){document.getElementById("aOut").textContent="Error: "+e.message;}
+}
+document.getElementById("aRun").onclick=runPlan;
+document.getElementById("aHub").onclick=()=>{const ta=document.getElementById("aNodes");ta.value=ta.value.trim()+"\n16";runPlan();};
+
+// ---------- PLACE ----------
+document.getElementById("pR").value=S.vlab_codec.kpi_real_gguf_27b_ratio_2048.toFixed(3);
+function runPlace(){
+  const k=+document.getElementById("pK").value,r=+document.getElementById("pR").value,B=+document.getElementById("pB").value*1e6/8,a=+document.getElementById("pA").value/1e3,P=+document.getElementById("pP").value,L=+document.getElementById("pL").value;
+  if(!(k>0&&r>0&&B>0&&a>=0&&P>0&&L>0)){document.getElementById("pOut").textContent="Error: all inputs must be positive";return;}
+  const tx=L*k/(r*B)+a, tu=L*k/B+a, tr=L/P; const den=1/P-k/(r*B); const Ls=den>0?a/den:null;
+  document.getElementById("pOut").innerHTML=`T_xfer (compressed) = ${(tx*1e3).toFixed(1)} ms   T_xfer (raw) = ${(tu*1e3).toFixed(1)} ms   T_rec = ${(tr*1e3).toFixed(1)} ms\nPLACE -> <span class="${tx<tr?'ok':'bad'}">${tx<tr?'TRANSFER':'RECOMPUTE'}</span> (cost only; a live grant path is still required)\ncrossover L* = ${Ls===null?'none, recompute always wins at this P and B':Math.round(Ls).toLocaleString()+' tokens'}`;
+}
+document.getElementById("pRun").onclick=runPlace;
+
+// ---------- LoRa ----------
+const PRESETS=S.lora.presets; const sel=document.getElementById("lPreset");
+for(const [name,p] of Object.entries(PRESETS)){const o=document.createElement("option");o.value=name;o.textContent=`${name} (BW ${p.bandwidth_hz/1e3} kHz, SF${p.sf}, CR ${p.cr})`;sel.appendChild(o);}
+sel.value="LongFast";
+function airtime(bw,sf,cr,payload){const tsym=Math.pow(2,sf)/bw;const de=tsym>0.016?1:0;const pl=16+payload;const num=8*pl-4*sf+28+16;const den=4*(sf-2*de);const np=8+Math.max(Math.ceil(num/den)*(cr+4),0);return {tsym,tpre:(16+4.25)*tsym,tpay:np*tsym};}
+function runLora(){
+  const p=PRESETS[sel.value];const bytes=Math.min(239,Math.max(0,+document.getElementById("lBytes").value|0));const duty=+document.getElementById("lDuty").value/100;const intv=+document.getElementById("lInt").value;
+  const cr=+p.cr.split("/")[1]-4; const a=airtime(p.bandwidth_hz,p.sf,cr,bytes); const t=(a.tpre+a.tpay);
+  const perMin=duty*60/t; const nodes=Math.floor(perMin/(60/intv));
+  document.getElementById("lOut").textContent=`symbol ${(a.tsym*1e3).toFixed(2)} ms; preamble ${(a.tpre*1e3).toFixed(1)} ms; payload ${(a.tpay*1e3).toFixed(1)} ms; time on air ${(t*1e3).toFixed(1)} ms for ${16+bytes} bytes on air\nat ${(duty*100).toFixed(1)}% duty: ${perMin.toFixed(1)} packets/min -> ${nodes} nodes can heartbeat every ${intv} s\nthis carrier moves ${(239*perMin/60).toFixed(0)} payload bytes/s at best; KV and activations never use it`;
+}
+document.getElementById("lRun").onclick=runLora;
+
+// ---------- KPIs ----------
+const C=S.compression,K=S.keying,A=S.admission,CH=S.churn,Lr=S.lora;
+const VC=S.vlab_codec;
+const kp=[[VC.kpi_real_gguf_ratio_min.toFixed(2)+" to "+VC.kpi_real_gguf_ratio_max_any_level.toFixed(2)+"x","lossless ratio on real GGUF KV (f16), byte-split zstd, bit-exact, Azure VM CPU host class","measured"],[VC.kpi_enc_MBps_min.toFixed(0)+" to "+VC.kpi_enc_MBps_max.toFixed(0)+" MB/s","encode throughput on real GGUF KV, CPU host class","measured"],[K.kpi_us_per_64_token_chunk.toFixed(1)+" us","per 64-token HMAC chunk key","measured"],["Unplaceable","27.8B demo on Air+Mini+Clip at public floors","calculated"],[CH.kpi_stale_fenced_rejected_median.toFixed(0)+"/"+CH.kpi_stale_fenced_rejected_median.toFixed(0),"stale completions rejected by fencing, median run; live drill: 0 stale accepted","simulated + live drill"],[Lr.kpi_longfast_heartbeat_ms.toFixed(0)+" ms","48-byte heartbeat airtime on LongFast","calculated"]];
+document.getElementById("kpis").innerHTML=kp.map(([v,l,t])=>`<div class="kpi"><div class="kv">${v}</div><div class="kl">${l}</div><div class="kt">${t}</div></div>`).join("");
+
+// ---------- theme ----------
+const tb=document.getElementById("themeBtn");let mode="auto";
+try{mode=localStorage.getItem("thox-demo-theme")||"auto";}catch(e){}
+function applyTheme(){if(mode==="auto")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",mode);tb.textContent="Theme: "+mode;try{localStorage.setItem("thox-demo-theme",mode);}catch(e){}}
+tb.onclick=()=>{mode=mode==="auto"?"dark":mode==="dark"?"light":"auto";applyTheme();};applyTheme();
+
+// run everything once
+window.__katOk=kat(); runKeys(); runPlan(); runPlace(); runLora();
+</script>
+</body>
+</html>
