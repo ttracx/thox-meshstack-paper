@@ -108,3 +108,17 @@ the Creative Commons Attribution 4.0 International License
 is included as the paper's reproducibility artifact under the same
 license. See [`NOTICE.md`](NOTICE.md) for attribution and third-party
 notices.
+
+---
+
+## Legal
+
+Copyright (c) 2024-2026 THOX.ai LLC. All rights reserved.
+
+**THOX.ai LLC**
+- CTO: Tommy Xaypanya
+- CEO: Craig Ross
+
+See [LICENSE](LICENSE) for license terms.
+
+Unauthorized copying, modification, merger, publication, distribution, sublicensing, and/or selling of this software, via any medium, is strictly prohibited without prior written consent from THOX.ai LLC.
